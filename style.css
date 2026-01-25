@@ -543,6 +543,20 @@ p {
   letter-spacing: 0.05em;
 }
 
+.plan-badge-featured {
+  background: linear-gradient(135deg, #ff6b35, #f7931e) !important;
+  font-size: 0.75rem;
+  padding: 6px 12px;
+  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+}
+
+.plan-badge-exclusive {
+  background: linear-gradient(135deg, #8b5a3c, #6b4423) !important;
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  box-shadow: 0 2px 8px rgba(139, 90, 60, 0.3);
+}
+
 .plan-vip .plan-badge {
   background: linear-gradient(135deg, var(--color-accent-deep), #d85a3a);
 }
@@ -631,6 +645,67 @@ p {
   margin-top: 2px;
 }
 
+/* 500円プラン（一番目立たせる） */
+.plan-featured {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 53, 0.12),
+    rgba(255, 255, 255, 0.98)
+  );
+  border: 2px solid var(--color-accent);
+  box-shadow: 0 8px 24px rgba(242, 157, 126, 0.15);
+  transform: scale(1.02);
+}
+
+.plan-featured:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 16px 40px rgba(242, 157, 126, 0.2);
+}
+
+.plan-featured .plan-price-main {
+  font-size: 2.2rem;
+  color: #ff6b35;
+}
+
+/* 15000円プラン（審査制・特別感） */
+.plan-exclusive {
+  background: linear-gradient(
+    135deg,
+    rgba(139, 90, 60, 0.1),
+    rgba(255, 255, 255, 0.95)
+  );
+  border: 2px solid rgba(139, 90, 60, 0.3);
+  box-shadow: 0 8px 24px rgba(139, 90, 60, 0.12);
+  position: relative;
+}
+
+.plan-exclusive::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, rgba(139, 90, 60, 0.2), rgba(107, 68, 35, 0.2));
+  border-radius: var(--radius-large);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.plan-exclusive:hover::before {
+  opacity: 1;
+}
+
+.plan-exclusive:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(139, 90, 60, 0.18);
+}
+
+.plan-exclusive .plan-price-main {
+  color: #8b5a3c;
+}
+
 .plan-vip {
   background: linear-gradient(
     135deg,
@@ -645,10 +720,15 @@ p {
     flex-direction: row;
     max-width: 100%;
     gap: 24px;
+    align-items: stretch;
   }
 
   .plan-card {
     flex: 1;
+  }
+
+  .plan-featured {
+    order: -1; /* 500円プランを最初に表示 */
   }
 }
 
