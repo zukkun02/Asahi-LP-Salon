@@ -238,6 +238,7 @@ p {
   border-radius: 999px;
   position: relative;
   overflow: hidden;
+  white-space: nowrap;
   transition:
     background-color 0.2s ease,
     color 0.2s ease;
@@ -855,6 +856,18 @@ p {
 
   .section-soft {
     padding: 88px 0;
+  }
+}
+
+/* スマホ表示での調整 */
+@media (max-width: 639px) {
+  .header-nav {
+    gap: 6px;
+  }
+
+  .nav-link {
+    font-size: 0.75rem;
+    padding: 4px 6px;
   }
 }
 
