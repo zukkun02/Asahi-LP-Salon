@@ -393,7 +393,10 @@ p {
 
 .hero-visual {
   position: relative;
-  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 160px;
 }
 
 .hero-circle {
@@ -434,6 +437,32 @@ p {
 .hero-visual:hover .hero-circle-small {
   transform: translateY(6px) translateX(-4px) scale(0.96);
   opacity: 0.9;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: var(--radius-large);
+  box-shadow: var(--shadow-soft);
+  object-fit: cover;
+}
+
+/* セクション間の画像 */
+.section-image-wrapper {
+  padding: 40px 0;
+  text-align: center;
+  background-color: var(--color-bg);
+}
+
+.section-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: var(--radius-large);
+  box-shadow: var(--shadow-soft);
+  object-fit: cover;
+  margin: 0 auto;
 }
 
 /* =========================
@@ -973,7 +1002,7 @@ p {
   }
 
   .hero-visual {
-    height: 220px;
+    min-height: 220px;
   }
 
   .section-heading h2 {
@@ -1012,6 +1041,19 @@ p {
   .nav-link {
     font-size: 0.75rem;
     padding: 4px 6px;
+  }
+
+  .hero-image {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .section-image-wrapper {
+    padding: 32px 16px;
+  }
+
+  .section-image {
+    max-width: 100%;
   }
 }
 
