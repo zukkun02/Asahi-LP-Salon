@@ -816,6 +816,27 @@ p {
 
 .profile-visual {
   margin: 6px 0 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 40% 30%;
+  box-shadow: var(--shadow-soft);
+  flex-shrink: 0;
+}
+
+.profile-text {
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: var(--color-text-sub);
+  line-height: 1.6;
 }
 
 .profile-image-dummy {
@@ -1054,6 +1075,11 @@ p {
 
   .section-image {
     max-width: 100%;
+  }
+
+  .profile-image {
+    width: 120px;
+    height: 120px;
   }
 }
 
