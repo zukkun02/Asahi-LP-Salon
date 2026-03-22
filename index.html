@@ -31,7 +31,6 @@
     <main>
       <!--
         【あとで追加・差し替え一覧】
-        ・ヒーロー写真：images/hero-happiness-brain.jpg（心・幸せ脳をイメージする写真）
         ・一生物の資産：背景透過1.png / 2.png / 3.png（差し替え可）
         ・運営者写真：Adobe Express - file (1).png（Asahi顔写真・差し替え可）
         ・お客様の声：テキスト・スクショの差し替え・追加可
@@ -47,14 +46,6 @@
               毎日Asahi思考に触れて、<br class="sp-only" />「生きづらさ」を軽くするサロンです。
             </p>
             <!-- ③ボタン削除済み（詳しく話を聞いてみる／今の生きづらさに心当たりがある方へ） -->
-          </div>
-          <!-- ②【要追加】心・幸せ脳をイメージする写真。差し替え時は src と alt を変更してください -->
-          <div class="hero-visual" aria-hidden="true">
-            <img
-              src="images/hero-happiness-brain.jpg"
-              alt="【要追加】心や幸せ脳をイメージする写真を配置"
-              class="hero-image"
-            />
           </div>
         </div>
       </section>
@@ -72,6 +63,7 @@
                 <li>毎日なんとなく<strong>生きづらさ</strong>を感じている</li>
                 <li>ネガティブ思考で、気分の浮き沈みが激しい</li>
                 <li>人間関係に常に悩んでいる</li>
+                <li>子育て、家事、仕事、愚痴の吐きどころがない</li>
               </ul>
             </div>
           </div>
@@ -159,7 +151,7 @@
         </div>
       </section>
 
-      <!-- 5. プラン紹介（4プラン） -->
+      <!-- 5. プラン紹介（2プラン） -->
       <section id="plans" class="section section-soft">
         <div class="container section-inner">
           <div class="section-heading center scroll-reveal">
@@ -168,27 +160,7 @@
           </div>
 
           <div class="plans-grid">
-            <!-- スモールステップサロン：月500円（1か月のみ参加可能） -->
-            <div class="plan-card plan-entry plan-featured scroll-reveal">
-              <div class="plan-badge plan-badge-featured">迷ったらこれ</div>
-              <h3 class="plan-title">スモールステップサロン</h3>
-              <div class="plan-price-wrapper">
-                <p class="plan-price">
-                  月額 <span class="plan-price-main">500</span
-                  ><span class="plan-price-unit">円（税込）</span>
-                </p>
-                <p class="plan-price-daily">1日約17円でできる</p>
-              </div>
-              <p class="plan-description">まずは気軽に始めたい人向け。1か月のみ参加可能です。</p>
-              <ul class="plan-features">
-                <li><span class="check-icon">✓</span><span>Asahi公認スーパーアドバイザーにいつでも悩み相談可能</span></li>
-                <li><span class="check-icon">✓</span><span>月1 Zoom サロン限定ミーティング参加可能</span></li>
-                <li><span class="check-icon">✓</span><span>毎日サロン限定のAsahiの直喋り動画が見える</span></li>
-              </ul>
-              <p class="plan-note">※ スモールサロンは1か月のみ参加可能です</p>
-            </div>
-
-            <!-- スタンダード：月5,000円（スモールより属性を分けて強調） -->
+            <!-- スタンダード：月5,000円 -->
             <div class="plan-card plan-standard scroll-reveal">
               <div class="plan-badge">スタンダード</div>
               <h3 class="plan-title">スタンダードプラン</h3>
@@ -202,7 +174,7 @@
               </div>
               <p class="plan-description">Asahiと直接ラインを交換し、一緒に生きていく</p>
               <ul class="plan-features">
-                <li><span class="check-icon">✓</span><span>スモールステップサロンとは別に VIP専用のLINEグループに参加</span></li>
+                <li><span class="check-icon">✓</span><span>VIP専用のLINEグループに参加</span></li>
                 <li><span class="check-icon">✓</span><span>月1 サロンライブ参加➕質問券</span></li>
                 <li><span class="check-icon">✓</span><span>Asahi MY GPTの利用</span></li>
                 <li><span class="check-icon">✓</span><span>伝説のAsahiシートの利用</span></li>
@@ -211,7 +183,7 @@
 
             <!-- VIP プレミアム：月10,000円（1番人気・限定10名） -->
             <div class="plan-card plan-vip plan-premium scroll-reveal">
-              <div class="plan-badge plan-badge-popular">1番人気</div>
+              <div class="plan-badge plan-badge-exclusive">審査制</div>
               <h3 class="plan-title">VIP プレミアムプラン</h3>
               <div class="plan-price-wrapper">
                 <p class="plan-price">
@@ -225,28 +197,6 @@
               <ul class="plan-features">
                 <li><span class="check-icon">✓</span><span>スタンダードのすべての機能</span></li>
                 <li><span class="check-icon">✓</span><span>Asahi直接の審査制・限定10名</span></li>
-              </ul>
-            </div>
-
-            <!-- VIP：月15,000円（審査制・オフ会参加券つき） -->
-            <div class="plan-card plan-vip plan-exclusive scroll-reveal">
-              <div class="plan-badge plan-badge-exclusive">審査制</div>
-              <h3 class="plan-title">VIPプラン</h3>
-              <div class="plan-price-wrapper">
-                <p class="plan-price">
-                  月額 <span class="plan-price-main">15,000</span
-                  ><span class="plan-price-unit">円（税込）</span>
-                </p>
-                <p class="plan-price-annual">12ヶ月分 一括 ¥180,000（税込）</p>
-                <p class="plan-price-daily">1日約500円でできる</p>
-              </div>
-              <p class="plan-description">Asahi直接の審査が通った方のみ</p>
-              <ul class="plan-features">
-                <li><span class="check-icon">✓</span><span>スタンダードプランのすべての機能</span></li>
-                <li><span class="check-icon">✓</span><span>月1回・30分の個別MG</span></li>
-                <li><span class="check-icon">✓</span><span>LINE質問 基本OK</span></li>
-                <li><span class="check-icon">✓</span><span>Asahiとより近く、共に歩めるプラン</span></li>
-                <li><span class="check-icon">✓</span><span>オフ会参加券</span></li>
               </ul>
             </div>
           </div>
@@ -296,100 +246,11 @@
               <p class="voice-heading-en">VOICE</p>
             </header>
             <div class="voices-grid">
+              <!-- 本文：お客様声.md（6名・同一人物なし） -->
               <article class="voice-card scroll-reveal">
-                <p class="voice-card-headline">
-                  コメントひとつひとつに丁寧に向き合う姿に惹かれ、素の自分でいられる居場所に
-                </p>
-                <div class="voice-card-body">
-                  <div class="voice-card-aside">
-                    <img
-                      src="images/voice-avatar-male.jpeg"
-                      alt=""
-                      class="voice-avatar-img"
-                      width="80"
-                      height="80"
-                      decoding="async"
-                    />
-                    <p class="voice-initials">M.M</p>
-                  </div>
-                  <div class="voice-card-text">
-                    <p>職場の人間関係に疲れていた時、偶然見たインスタLIVE。コメント一つひとつに丁寧に向き合う朝陽くんの姿に惹かれ、サロンに参加しました。</p>
-                    <p>朝陽くんは「前向きな言葉が出ない日があってもいい」と言ってくれます。どんな自分でも受け入れてくれる仲間がいることが、私にとって大きな救いでした。</p>
-                    <p>ここにいると心が落ち着いて、「このままでいいのかも」と思える。朝陽くんは人の弱さを否定せず、そっと寄り添ってくれる存在です。この場所で素の自分でいられることの大切さに気づきました。これからもずっと一緒にいたい、そう思える大切な居場所です。</p>
-                  </div>
-                </div>
-              </article>
-              <article class="voice-card scroll-reveal">
-                <p class="voice-card-headline">
-                  「信じてみたい」と思えた出会いが、前向きに変わる自分への扉になった
-                </p>
-                <div class="voice-card-body">
-                  <div class="voice-card-aside">
-                    <img
-                      src="images/voice-avatar-female.jpeg"
-                      alt=""
-                      class="voice-avatar-img"
-                      width="80"
-                      height="80"
-                      decoding="async"
-                    />
-                    <p class="voice-initials">H.M</p>
-                  </div>
-                  <div class="voice-card-text">
-                    <p>偶然出会ったAsahiの動画に心を打たれ、LIVEでの一人ひとりへの丁寧な対応に惹かれました。人への不信感やいじめの経験がある中で、「信じてみたい」「自分を変えたい」と思いサロンへ。</p>
-                    <p>関わるほどに理想の自分が見え、コーチングを受けて人生が大きく変化。数ヶ月前の自分では想像できないほど前向きになれました。この出会いは偶然ではなく、必然だったと感じています。Asahi先生は、そんな人生を変えるきっかけをくれる存在です。</p>
-                  </div>
-                </div>
-              </article>
-              <article class="voice-card scroll-reveal">
-                <p class="voice-card-headline">
-                  言葉に救われた一歩から、薬も減り「笑顔が増えた」と言われるまでに
-                </p>
-                <div class="voice-card-body">
-                  <div class="voice-card-aside">
-                    <img
-                      src="images/voice-avatar-female.jpeg"
-                      alt=""
-                      class="voice-avatar-img"
-                      width="80"
-                      height="80"
-                      decoding="async"
-                    />
-                    <p class="voice-initials">M.Y</p>
-                  </div>
-                  <div class="voice-card-text">
-                    <p>心の病気を抱え、仕事も日常もうまくいかず、薬も増え続けていた私。そんな中、偶然出会ったAsahi先生の言葉に救われ、藁にもすがる思いでサロンに入りました。</p>
-                    <p>最初は不安でしたが、先生やサロンの皆さんが温かく迎えてくださり、「私はここにいていいんだ」と思えるように。関わる中で「変わりたい」と思えるようになり、気づけば薬も減り、周りから「笑顔が増えたね」と言われるほどに変化しました。</p>
-                    <p>Asahi先生は否定せず、寄り添いながらも、必要なことはしっかり伝えてくれる存在。人生の見方が180度変わるほどの大きなきっかけになりました。あの時、一歩踏み出して本当に良かったと心から思っています。</p>
-                  </div>
-                </div>
-              </article>
-              <article class="voice-card scroll-reveal">
-                <p class="voice-card-headline">
+                <h3 class="voice-card-headline">
                   どんな自分も否定されず、帰ってこれる心のよりどころがある
-                </p>
-                <div class="voice-card-body">
-                  <div class="voice-card-aside">
-                    <img
-                      src="images/voice-avatar-male.jpeg"
-                      alt=""
-                      class="voice-avatar-img"
-                      width="80"
-                      height="80"
-                      decoding="async"
-                    />
-                    <p class="voice-initials">M.N</p>
-                  </div>
-                  <div class="voice-card-text">
-                    <p>落ち込んだ時や迷った時、心のよりどころが欲しい。そんな時に、優しく本質を教えてくれるのがAsahiさんです。どんな自分でも否定されず、「一緒に生きよう」と言ってくれる安心感。ここには、帰ってこれる居場所があります。</p>
-                  </div>
-                </div>
-              </article>
-              <!-- お客様の声.md「###ここから追加」より -->
-              <article class="voice-card scroll-reveal">
-                <p class="voice-card-headline">
-                  インスタLIVEの丁寧さに惹かれ、「前向きになれない日もいい」と受け入れられる居場所に
-                </p>
+                </h3>
                 <div class="voice-card-body">
                   <div class="voice-card-aside">
                     <img
@@ -400,30 +261,53 @@
                       height="80"
                       decoding="async"
                     />
-                    <p class="voice-initials">A.R</p>
+                    <p class="voice-initials">M.Nさん</p>
+                  </div>
+                  <div class="voice-card-text">
+                    <p>落ち込んだ時や迷った時、心のよりどころが欲しい。</p>
+                    <p>そんな時に、優しく本質を教えてくれるのがAsahiさんです。</p>
+                    <p>どんな自分でも否定されず、「一緒に生きよう」と言ってくれる安心感。ここには、帰ってこれる居場所があります。</p>
+                  </div>
+                </div>
+              </article>
+              <article class="voice-card scroll-reveal">
+                <h3 class="voice-card-headline">
+                  インスタLIVEの丁寧さに惹かれ、「前向きになれない日もいい」と受け入れられた
+                </h3>
+                <div class="voice-card-body">
+                  <div class="voice-card-aside">
+                    <img
+                      src="images/voice-avatar-female.jpeg"
+                      alt=""
+                      class="voice-avatar-img"
+                      width="80"
+                      height="80"
+                      decoding="async"
+                    />
+                    <p class="voice-initials">M.Mさん</p>
                   </div>
                   <div class="voice-card-text">
                     <p>職場の人間関係に疲れていた時、偶然出会ったインスタLIVE。その丁寧な姿に惹かれ、サロンに入りました。</p>
                     <p>「前向きになれない日があってもいい」そう言ってくれる場所で、どんな自分も受け入れられました。</p>
-                    <p>ここにいると心が落ち着き、「このままでいい」と思える。弱さに寄り添ってくれる、私にとって大切な居場所です。</p>
+                    <p>弱さに寄り添ってくれる、私にとって大切な居場所です。</p>
                   </div>
                 </div>
               </article>
               <article class="voice-card scroll-reveal">
-                <p class="voice-card-headline">
-                  転換期に入会し、Asahi sheetとメンバーの支えで少しずつ変化し前に進む勇気を得た
-                </p>
+                <h3 class="voice-card-headline">
+                  転換期に入会し、Asahi sheetとメンバーの支えで前に進む勇気を得た
+                </h3>
                 <div class="voice-card-body">
                   <div class="voice-card-aside">
                     <img
-                      src="images/voice-avatar-male.jpeg"
+                      src="images/voice-avatar-female.jpeg"
                       alt=""
                       class="voice-avatar-img"
                       width="80"
                       height="80"
                       decoding="async"
                     />
-                    <p class="voice-initials">S.Y</p>
+                    <p class="voice-initials">S.Mさん</p>
                   </div>
                   <div class="voice-card-text">
                     <p>落ち込んでいた時に出会い、転換期だと感じて入会。Asahi sheetで思考が変わり、メンバーの言葉に支えられながら、自分も少しずつ変化。</p>
@@ -432,9 +316,9 @@
                 </div>
               </article>
               <article class="voice-card scroll-reveal">
-                <p class="voice-card-headline">
-                  言葉に救われ「ここにいていい」と思え、薬も減り笑顔と人生の見方が変わっていった
-                </p>
+                <h3 class="voice-card-headline">
+                  「信じてみたい」と思えた出会いが、人生を変えるきっかけをくれた
+                </h3>
                 <div class="voice-card-body">
                   <div class="voice-card-aside">
                     <img
@@ -445,19 +329,42 @@
                       height="80"
                       decoding="async"
                     />
-                    <p class="voice-initials">K.A</p>
+                    <p class="voice-initials">H.Mさん</p>
                   </div>
                   <div class="voice-card-text">
-                    <p>心の病気で苦しむ中、Asahi先生の言葉に救われ、サロンへ。不安の中で入った場所でしたが、「ここにいていい」と思える安心をもらい、少しずつ変化。</p>
-                    <p>気づけば薬も減り、「笑顔が増えた」と言われるほどに。寄り添いながら導いてくれる存在に出会い、人生の見方が大きく変わりました。</p>
+                    <p>偶然出会ったAsahiの動画に心を打たれ、LIVEでの一人ひとりへの丁寧な対応に惹かれました。人への不信感やいじめの経験がある中で、「信じてみたい」「自分を変えたい」と思いサロンへ。</p>
+                    <p>数ヶ月前の自分では想像できないほど前向きになれました。この出会いは偶然ではなく、必然だったと感じています。</p>
+                    <p>Asahi先生は、そんな人生を変えるきっかけをくれた存在です。</p>
+                  </div>
+                </div>
+              </article>
+              <article class="voice-card scroll-reveal">
+                <h3 class="voice-card-headline">
+                  言葉に救われ「ここにいていい」と思え、薬も減り笑顔が増えた
+                </h3>
+                <div class="voice-card-body">
+                  <div class="voice-card-aside">
+                    <img
+                      src="images/voice-avatar-female.jpeg"
+                      alt=""
+                      class="voice-avatar-img"
+                      width="80"
+                      height="80"
+                      decoding="async"
+                    />
+                    <p class="voice-initials">M.Yさん</p>
+                  </div>
+                  <div class="voice-card-text">
+                    <p>心の病気で苦しむ中、Asahi先生の言葉に救われ、サロンへ。不安の中で入った場所でしたが、「ここにいていい」と思える安心をもらい、不思議と少しずつ変化を感じました。</p>
+                    <p>気づけば薬も減り、「笑顔が増えた」と言われるほどに。</p>
                     <p>あの一歩は、間違いなく人生を変える一歩でした。</p>
                   </div>
                 </div>
               </article>
               <article class="voice-card scroll-reveal">
-                <p class="voice-card-headline">
-                  不安の中の一歩から安心と変化へ。寄り添いで人生の見方が大きく変わった
-                </p>
+                <h3 class="voice-card-headline">
+                  動画とコーチングで、ネガティブ100%から少しずつポジティブに変われた
+                </h3>
                 <div class="voice-card-body">
                   <div class="voice-card-aside">
                     <img
@@ -468,12 +375,12 @@
                       height="80"
                       decoding="async"
                     />
-                    <p class="voice-initials">M.Y</p>
+                    <p class="voice-initials">M・Fさん</p>
                   </div>
                   <div class="voice-card-text">
-                    <p>心の病気で苦しむ中、Asahi先生の言葉に救われ、サロンへ。不安の中で入った場所でしたが、「ここにいていい」と思える安心をもらい、少しずつ変化。</p>
-                    <p>気づけば薬も減り、「笑顔が増えた」と言われるほどに。寄り添いながら導いてくれる存在に出会い、人生の見方が大きく変わりました。</p>
-                    <p>あの一歩は、間違いなく人生を変える一歩でした。</p>
+                    <p>あさひ君の動画は以前から見ていて、心理学の内容がとても心に響いていました。サロンも最初は迷っていたのですが、「その行動力が大事」と背中を押してもらえました。コーチングでは親身に話を聞いてくれて、楽しく前向きになれる時間になっています。</p>
+                    <p>実際に、会社でも「前よりポジティブになった」と言われるようになりました。もともとネガティブ100%だった自分が、少しずつポジティブに変われています。本当に感謝しています。</p>
+                    <p>心の悩みは一人では解決できない。それを本当に実感する場所です。</p>
                   </div>
                 </div>
               </article>
@@ -495,12 +402,12 @@
               <p>A. ボタン1つで必要情報のみ入力していただいたら即参加できます！</p>
             </div>
             <div class="faq-item scroll-reveal">
-              <h3>Q. 途中解約はすぐできますでしょうか？</h3>
-              <p>A. 500円プランは即可能です！VIPプランは3か月更新の契約となります！</p>
+              <h3>Q. 途中解約は可能でしょうか？</h3>
+              <p>A. はじめの3か月は解約不可です。4か月目以降は、いつでも解約可能です。</p>
             </div>
             <div class="faq-item scroll-reveal">
               <h3>Q. 忙しくて毎日は活動できないんですがそれでも大丈夫ですか？</h3>
-              <p>A. 運営のAsahiも毎日毎日絶対に参加しているわけではありません！自分のペースで大丈夫ですからね💫</p>
+              <p>A. 大丈夫です。毎日の参加が必須ではありませんので、ご自身のペースでご参加ください💫</p>
             </div>
             <div class="faq-item scroll-reveal">
               <h3>Q. 人との関わりが苦手で、集団サロンが苦手なんですが、その場合Asahiさんと直接関われるツールなどはあるんでしょうか？</h3>
