@@ -13,7 +13,7 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -45,7 +45,11 @@
             <p class="hero-subcopy scroll-reveal">
               毎日Asahi思考に触れて、<br class="sp-only" />「生きづらさ」を軽くするサロンです。
             </p>
-            <!-- ③ボタン削除済み（詳しく話を聞いてみる／今の生きづらさに心当たりがある方へ） -->
+            <div class="hero-actions scroll-reveal">
+              <a href="https://www.notion.so/2f9d88b36d0c80c6bb58e3eab7cc5777?pvs=106" class="btn btn-primary btn-large" target="_blank" rel="noopener noreferrer">
+                サロン参加する
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -57,7 +61,7 @@
             <p class="eyebrow">共感</p>
             <h2>こんな生きづらさ、抱えていませんか？</h2>
           </div>
-          <div class="grid grid-2 problems-grid">
+          <div class="problems-grid">
             <div class="card scroll-reveal">
               <ul class="list-check">
                 <li>毎日なんとなく<strong>生きづらさ</strong>を感じている</li>
@@ -70,25 +74,63 @@
         </div>
       </section>
 
-      <!-- 3. Asahiサロンの特徴 -->
+      <!-- 3. Asahiサロン 10の特典 -->
       <section id="features" class="section">
         <div class="container section-inner">
           <div class="section-heading center scroll-reveal">
-            <p class="eyebrow">Asahiサロンの特徴</p>
-            <h2>3つの特徴</h2>
+            <p class="eyebrow">Asahiサロンの特典</p>
+            <h2>10の特典</h2>
           </div>
-          <div class="grid grid-3 features-grid">
-            <div class="card feature-card scroll-reveal">
-              <h3>常に誰かに相談できる環境がある</h3>
-              <p>ストレス社会の中、Asahiが直接指導し、洗練された問題解決能力を備えた超Asahi脳の女性アドバイザーたちがチャットで直接相談に乗ってくれる。</p>
+          <div class="benefits-grid">
+            <div class="card benefit-card scroll-reveal">
+              <span class="benefit-num">01</span>
+              <h3>毎日サロン限定動画が見れる</h3>
+              <p>SNSには一切非公開の幸せの秘訣を包み隠さず大公開</p>
             </div>
-            <div class="card feature-card scroll-reveal">
-              <h3>毎日動画が送られてくる</h3>
-              <p>毎日必ず、サロンでしか見れないAsahiの最強マインドの秘密が次々と送られてくる。みているだけで嫌でも幸せ脳が勝手につくられてしまう。</p>
+            <div class="card benefit-card scroll-reveal">
+              <span class="benefit-num">02</span>
+              <h3>特許取得レベル Asahiシート公開</h3>
+              <p>毎日寝る前に「書くだけでポジティブになる」伝説のシート</p>
             </div>
-            <div class="card feature-card scroll-reveal">
-              <h3>Asahiシートで人生観を変える</h3>
-              <p>嫌でもポジティブになるAsahiシートの全貌が明らかに。現サロンメンバーも驚くほどの効果を体感している。毎日みんなで（Asahi含め）書く。嫌でもポジティブになる環境が整っている。</p>
+            <div class="card benefit-card scroll-reveal">
+              <span class="benefit-num">03</span>
+              <h3>Asahi Chat GPTの利用</h3>
+              <p>Asahiの脳みそが入り込んだAI型Asahiが使い放題</p>
+            </div>
+            <div class="card benefit-card scroll-reveal">
+              <span class="benefit-num">04</span>
+              <h3>Asahi月1壁打ちZoom会に参加できる</h3>
+              <p>毎月サロンメンバー限定で質問もし放題</p>
+            </div>
+            <div class="card benefit-card scroll-reveal">
+              <span class="benefit-num">05</span>
+              <h3>月に1人、クエ鍋セットが当たる</h3>
+              <p>壁打ちZoom会にて、ルーレットで毎月1人にプレゼント！</p>
+            </div>
+            <div class="card benefit-card scroll-reveal">
+              <span class="benefit-num">06</span>
+              <h3>Asahiとの旅行（リトリート）格安参加権</h3>
+              <p>海、森、夜景、温泉。Asahi主催の癒しの連泊旅行に参加できる</p>
+            </div>
+            <div class="card benefit-card scroll-reveal">
+              <span class="benefit-num">07</span>
+              <h3>定期オフ会・食事会の参加権</h3>
+              <p>東京・大阪・福岡・名古屋、各地でサロンメンバー限定の定期オフ会を開催</p>
+            </div>
+            <div class="card benefit-card scroll-reveal">
+              <span class="benefit-num">08</span>
+              <h3>過去100本以上の動画が全て見放題</h3>
+              <p>5年の歳月をかけたAsahi心理学が毎日聴き放題</p>
+            </div>
+            <div class="card benefit-card scroll-reveal">
+              <span class="benefit-num">09</span>
+              <h3>個別悩み相談会をすぐに受けれる</h3>
+              <p>一般の方向けには一切行っていない、サロンメンバー限定の相談</p>
+            </div>
+            <div class="card benefit-card scroll-reveal">
+              <span class="benefit-num">10</span>
+              <h3>一緒に仕事ができるようになる</h3>
+              <p>サロンで培った知識・経験でAsahiと共に事業を拡大できる</p>
             </div>
           </div>
         </div>
@@ -159,7 +201,7 @@
             <h2>今の自分に合わせて選べる<br class="sp-only" />プラン</h2>
           </div>
 
-          <div class="plans-grid">
+          <div class="plans-grid" id="plans-cards">
             <!-- スタンダード：月5,000円 -->
             <div class="plan-card plan-standard scroll-reveal">
               <div class="plan-badge">スタンダード</div>
@@ -200,6 +242,12 @@
               </ul>
             </div>
           </div>
+          <div class="plans-cta scroll-reveal">
+            <a href="https://www.notion.so/2f9d88b36d0c80c6bb58e3eab7cc5777?pvs=106" class="btn btn-primary btn-large" target="_blank" rel="noopener noreferrer">
+              サロン参加する
+            </a>
+            <p class="plans-cta-note">まずはお気軽にお問い合わせください</p>
+          </div>
         </div>
       </section>
 
@@ -225,17 +273,34 @@
                 />
               </div>
               <div class="profile-text">
-                <p>メディアにも多数取り上げられ、兄への右肺提供の移植を経験、妹の不登校を目の当たりにし、自身も学生時代の8割は常にいじめに苦しむ。そんな人の心の傷に人一倍敏感で、そんな苦労の連続から資格に縛られない、人間の幸せを最大に表出できる心理学を追求している。</p>
-                <p>若さと爽やかな笑顔が特徴で、今では多数のメディアに取り上げられ、心理学業界ではTOPの影響力を誇る。幸せのサロン以外にも、一人ひとりを丁寧に変容させるコーチング、たった1泊2日で人生観を変えさせるリトリート（癒しの旅）、ラジオ番組出演など、心理学を主軸に多方面で活躍している。</p>
+                <p>兄への右肺提供の移植を経験、妹の不登校を目の当たりにし、自身も学生時代の8割は常にいじめに苦しむ。そんな人の心の傷に人一倍敏感で、そんな苦労の連続から資格に縛られない、人間の幸せを最大に表出できる心理学を追求している。</p>
+                <p>若さと爽やかな笑顔が特徴で、心理学業界ではTOPの影響力を誇る。幸せのサロン以外にも、一人ひとりを丁寧に変容させるコーチング、たった1泊2日で人生観を変えさせるリトリート（癒しの旅）、ラジオ番組出演など、心理学を主軸に多方面で活躍している。</p>
+              </div>
+              <div class="media-links">
+                <p class="media-links-label">メディア掲載</p>
+                <ul class="media-links-list">
+                  <li><a href="https://news.infoseek.co.jp/article/globalnewsasia_10482/" target="_blank" rel="noopener noreferrer">infoseekニュース</a></li>
+                  <li><a href="https://www.excite.co.jp/news/article/Global_news_asia_10482/" target="_blank" rel="noopener noreferrer">exciteニュース</a></li>
+                  <li><a href="https://news.nicovideo.jp/watch/nw18491275?news_ref=media367_media367" target="_blank" rel="noopener noreferrer">ニコニコニュース</a></li>
+                </ul>
               </div>
             </div>
             <div class="card trust-card trust-card-stats">
               <h3>実績</h3>
-              <ul class="list-dot">
-                <li>累計120人への幸せ脳へ書き換え</li>
-                <li>セッション満足度 100%</li>
-                <li>生きづらさ改善度 100%</li>
-              </ul>
+              <div class="stats-list">
+                <div class="stat-item">
+                  <span class="stat-number">120<span class="stat-unit">人</span></span>
+                  <span class="stat-label">幸せ脳へ書き換え</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">100<span class="stat-unit">%</span></span>
+                  <span class="stat-label">セッション満足度</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">100<span class="stat-unit">%</span></span>
+                  <span class="stat-label">生きづらさ改善度</span>
+                </div>
+              </div>
             </div>
           </div>
 
