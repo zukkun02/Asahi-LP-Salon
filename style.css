@@ -448,14 +448,19 @@ p:last-child { margin-bottom: 0; }
   justify-content: center;
 }
 
-#problems .problems-grid .card {
-  max-width: 640px;
-  width: 100%;
+.problems-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.problem-card {
+  text-align: center;
+  padding: 32px 20px 28px;
   position: relative;
   overflow: hidden;
-  padding-top: 40px;
 }
-#problems .problems-grid .card::before {
+.problem-card::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
@@ -463,8 +468,21 @@ p:last-child { margin-bottom: 0; }
   background: linear-gradient(90deg, var(--pink), var(--violet));
   border-radius: var(--r-lg) var(--r-lg) 0 0;
 }
-#problems .list-check li::before { background: var(--pink); }
-#problems .list-check li::after  { /* white check already white */ }
+.problem-icon {
+  margin: 0 auto 16px;
+  width: 120px;
+  height: 120px;
+}
+.problem-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.problem-text {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text);
+}
 
 /* === FEATURES === */
 .features-grid {
@@ -1269,6 +1287,11 @@ p:last-child { margin-bottom: 0; }
   .hero { min-height: auto; padding: 72px 0 52px; }
   .hero-title { font-size: 1.8rem; }
   .hero-subcopy { font-size: 0.95rem; margin-bottom: 28px; }
+
+  .problems-grid-4 { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .problem-card { padding: 24px 16px 20px; }
+  .problem-icon { width: 90px; height: 90px; }
+  .problem-text { font-size: 0.88rem; }
 
   .profile-image { width: 180px; height: 180px; }
   .value-card-body { flex-direction: column; align-items: flex-start; }
