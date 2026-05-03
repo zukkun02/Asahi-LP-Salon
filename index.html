@@ -19,7 +19,9 @@
   <body>
     <header class="site-header">
       <div class="container header-inner">
-        <div class="logo">Asahi SALON</div>
+        <a href="#hero" class="logo">
+          <img src="images/hero-logo.png" alt="Asahi共に生きるサロン" />
+        </a>
         <nav class="header-nav">
           <a href="#plans" class="nav-link nav-nowrap">プラン</a>
           <a href="#trust" class="nav-link">サロンに<br class="sp-only">ついて</a>
@@ -41,10 +43,7 @@
         <div class="hero-inner">
           <div class="hero-text">
             <p class="hero-tagline scroll-reveal">Asahiともに生きるオンラインサロン</p>
-            <h1 class="hero-title scroll-reveal"><span class="hero-underline">本当の幸せを当たり前に。</span></h1>
-            <p class="hero-subcopy scroll-reveal">
-              Asahi思考に毎日触れることで、<br class="sp-only" />生きやすさが実感できるサロン
-            </p>
+            <h1 class="hero-title scroll-reveal"><span class="hero-underline">あなたを必ず<br>最高の幸せに</span></h1>
             <div class="hero-actions scroll-reveal">
               <a href="https://www.notion.so/2f9d88b36d0c80c6bb58e3eab7cc5777?pvs=106" class="btn btn-primary btn-large" target="_blank" rel="noopener noreferrer">
                 サロン参加する
@@ -61,38 +60,64 @@
         </div>
       </section>
 
-      <!-- 2. 悩みの共感・問題提起 -->
-      <section id="problems" class="section section-soft">
+      <!-- 2. Asahiって何者？（プロフィール先出し） -->
+      <section id="about-asahi" class="section section-soft">
+        <div class="container section-inner">
+          <div class="section-heading center scroll-reveal">
+            <p class="eyebrow">サロンについて</p>
+            <h2>Asahiって何者？</h2>
+          </div>
+          <div class="about-asahi-row scroll-reveal">
+            <div class="card trust-card trust-card-profile">
+              <h3>運営者 Asahi</h3>
+              <p class="trust-catch">総フォロワー数26万人の心理学インフルエンサー</p>
+              <div class="profile-visual">
+                <img
+                  src="Adobe Express - file (1).png"
+                  alt="Asahi"
+                  class="profile-image"
+                />
+              </div>
+              <div class="profile-text">
+                <p>はじめまして。Asahi心理学を伝える人、Asahi（あさひ）です。</p>
+                <p>このページを読んでいるあなたへ、まず私のことを少しだけお話しさせてください。</p>
+                <p>私は学生時代、いじめを経験しました。家庭でも、難病の兄、学校に行けない妹、その治療費に苦しむ両親——。そんな環境で「人はなぜ、こんなにも生きづらいのだろう」と問い続けながら育った人間です。</p>
+                <p>だからきっと、いま苦しんでいるあなたの気持ちが、少しだけわかります。<br />「誰にも言えない」「自分だけが置いていかれている」——その重さを、体感として知っているからです。</p>
+                <p>大学で心理学を学び、肩書や資格に頼らず、本当に人の心を軽くする方法だけを探してきました。</p>
+                <p>派手な言葉も、過剰な期待も、私からはお伝えしません。</p>
+                <p>ただ、苦しい時に「もう一人じゃない」と思える場所をつくる。<br />そのために、Asahiサロンを運営しています。</p>
+              </div>
+              <div class="media-links">
+                <p class="media-links-label">メディア掲載</p>
+                <ul class="media-links-list">
+                  <li><a href="https://news.infoseek.co.jp/article/globalnewsasia_10482/" target="_blank" rel="noopener noreferrer">infoseekニュース</a></li>
+                  <li><a href="https://www.excite.co.jp/news/article/Global_news_asia_10482/" target="_blank" rel="noopener noreferrer">exciteニュース</a></li>
+                  <li><a href="https://news.nicovideo.jp/watch/nw18491275?news_ref=media367_media367" target="_blank" rel="noopener noreferrer">ニコニコニュース</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. 悩みの共感・問題提起（中央キャラ＋4方向吹き出し） -->
+      <section id="problems" class="section">
         <div class="container section-inner">
           <div class="section-heading center scroll-reveal">
             <p class="eyebrow">共感</p>
-            <h2>こんな生きづらさ、抱えていませんか？</h2>
+            <h2>こんな悩み<br />1人で抱えていませんか？</h2>
           </div>
-          <div class="problems-grid problems-grid-4">
-            <div class="card problem-card scroll-reveal">
-              <div class="problem-icon">
-                <img src="images/problems/problem-01-lost.png" alt="生きづらさを感じるイメージ" width="160" height="160" loading="lazy" />
-              </div>
-              <p class="problem-text">毎日なんとなく<strong>生きづらさ</strong>を感じている</p>
+          <div class="problems-stage scroll-reveal">
+            <div class="bubble bubble-tl">毎日なんとなく<strong>生きづらさ</strong>を感じている</div>
+            <div class="bubble bubble-tr">ネガティブ思考で、<br /><strong>気分の浮き沈み</strong>が激しい</div>
+            <div class="bubble bubble-bl"><strong>人間関係</strong>に常に悩んでいる</div>
+            <div class="bubble bubble-br">子育て、家事、仕事、<br /><strong>愚痴の吐きどころ</strong>がない</div>
+            <div class="problems-character">
+              <img src="images/problems/problems-center-v3.png" alt="悩みを抱える女性のイラスト" width="600" height="600" loading="lazy" />
             </div>
-            <div class="card problem-card scroll-reveal">
-              <div class="problem-icon">
-                <img src="images/problems/problem-02-mood.png" alt="気分の浮き沈みのイメージ" width="160" height="160" loading="lazy" />
-              </div>
-              <p class="problem-text">ネガティブ思考で、<strong>気分の浮き沈み</strong>が激しい</p>
-            </div>
-            <div class="card problem-card scroll-reveal">
-              <div class="problem-icon">
-                <img src="images/problems/problem-03-relationship.png" alt="人間関係の悩みのイメージ" width="160" height="160" loading="lazy" />
-              </div>
-              <p class="problem-text"><strong>人間関係</strong>に常に悩んでいる</p>
-            </div>
-            <div class="card problem-card scroll-reveal">
-              <div class="problem-icon">
-                <img src="images/problems/problem-04-burden.png" alt="ストレスを抱えるイメージ" width="160" height="160" loading="lazy" />
-              </div>
-              <p class="problem-text">子育て、家事、仕事、<strong>愚痴の吐きどころ</strong>がない</p>
-            </div>
+            <span class="qmark qmark-1" aria-hidden="true">?</span>
+            <span class="qmark qmark-2" aria-hidden="true">?</span>
+            <span class="qmark qmark-3" aria-hidden="true">?</span>
           </div>
         </div>
       </section>
@@ -104,74 +129,64 @@
             <p class="eyebrow">Asahiサロンの特典</p>
             <h2>10の特典</h2>
           </div>
-          <div class="benefits-grid">
-            <div class="card benefit-card scroll-reveal">
+          <!-- 上位5: 大きく見せる特典 -->
+          <div class="benefits-grid benefits-grid-large">
+            <div class="card benefit-card benefit-card-large scroll-reveal">
               <div class="benefit-icon">
-                <img src="images/benefits/benefit-01-video.png" alt="サロン限定動画" width="160" height="160" loading="lazy" />
+                <img src="images/benefits/benefit-01-v2.png" alt="サロン限定動画" width="1024" height="1024" loading="lazy" />
               </div>
               <span class="benefit-num">01</span>
               <h3>毎日サロン限定動画が見れる</h3>
             </div>
-            <div class="card benefit-card scroll-reveal">
+            <div class="card benefit-card benefit-card-large scroll-reveal">
               <div class="benefit-icon">
-                <img src="images/benefits/benefit-02-sheet.png" alt="Asahiシート" width="160" height="160" loading="lazy" />
+                <img src="images/benefits/benefit-02-v2.png" alt="Asahi日記" width="1024" height="1024" loading="lazy" />
               </div>
               <span class="benefit-num">02</span>
-              <h3>特許取得レベル Asahiシート公開</h3>
+              <h3>特許取得レベル Asahi日記を毎日書く</h3>
             </div>
-            <div class="card benefit-card scroll-reveal">
+            <div class="card benefit-card benefit-card-large scroll-reveal">
               <div class="benefit-icon">
-                <img src="images/benefits/benefit-03-ai.png" alt="Asahi ChatGPT" width="160" height="160" loading="lazy" />
+                <img src="images/benefits/benefit-03-v2.png" alt="Asahi AI" width="1024" height="1024" loading="lazy" />
               </div>
               <span class="benefit-num">03</span>
-              <h3>Asahi Chat GPTの利用</h3>
+              <h3>Asahi AIで24時間、質問・相談可能</h3>
             </div>
-            <div class="card benefit-card scroll-reveal">
+            <div class="card benefit-card benefit-card-large scroll-reveal">
               <div class="benefit-icon">
-                <img src="images/benefits/benefit-04-zoom.png" alt="壁打ちZoom会" width="160" height="160" loading="lazy" />
+                <img src="images/benefits/benefit-04-v2.png" alt="壁打ちZoom会" width="1024" height="1024" loading="lazy" />
               </div>
               <span class="benefit-num">04</span>
               <h3>月1壁打ちZoom会に参加できる</h3>
             </div>
-            <div class="card benefit-card scroll-reveal">
+            <div class="card benefit-card benefit-card-large scroll-reveal">
               <div class="benefit-icon">
-                <img src="images/benefits/benefit-05-gift.png" alt="クエ鍋プレゼント" width="160" height="160" loading="lazy" />
+                <img src="images/benefits/benefit-05-v2.png" alt="リトリート旅行" width="1024" height="1024" loading="lazy" />
               </div>
               <span class="benefit-num">05</span>
-              <h3>月に1人、クエ鍋セットが当たる</h3>
-            </div>
-            <div class="card benefit-card scroll-reveal">
-              <div class="benefit-icon">
-                <img src="images/benefits/benefit-06-travel.png" alt="リトリート旅行" width="160" height="160" loading="lazy" />
-              </div>
-              <span class="benefit-num">06</span>
               <h3>リトリート（癒しの旅行）参加権</h3>
             </div>
-            <div class="card benefit-card scroll-reveal">
-              <div class="benefit-icon">
-                <img src="images/benefits/benefit-07-meetup.png" alt="オフ会・食事会" width="160" height="160" loading="lazy" />
-              </div>
+          </div>
+
+          <!-- 下位5: 端的な番号バッジ+テキストのみ（3列+2列中央揃え） -->
+          <div class="benefits-grid benefits-grid-small">
+            <div class="benefit-card-small scroll-reveal">
+              <span class="benefit-num">06</span>
+              <h3>月に1人、クエ鍋セットが当たる</h3>
+            </div>
+            <div class="benefit-card-small scroll-reveal">
               <span class="benefit-num">07</span>
               <h3>定期オフ会・食事会の参加権</h3>
             </div>
-            <div class="card benefit-card scroll-reveal">
-              <div class="benefit-icon">
-                <img src="images/benefits/benefit-08-archive.png" alt="動画アーカイブ" width="160" height="160" loading="lazy" />
-              </div>
+            <div class="benefit-card-small scroll-reveal">
               <span class="benefit-num">08</span>
               <h3>過去100本以上の動画が見放題</h3>
             </div>
-            <div class="card benefit-card scroll-reveal">
-              <div class="benefit-icon">
-                <img src="images/benefits/benefit-09-consult.png" alt="個別相談" width="160" height="160" loading="lazy" />
-              </div>
+            <div class="benefit-card-small scroll-reveal">
               <span class="benefit-num">09</span>
-              <h3>個別悩み相談会をすぐに受けれる</h3>
+              <h3>個別悩み相談会（予約制）</h3>
             </div>
-            <div class="card benefit-card scroll-reveal">
-              <div class="benefit-icon">
-                <img src="images/benefits/benefit-10-work.png" alt="一緒に仕事" width="160" height="160" loading="lazy" />
-              </div>
+            <div class="benefit-card-small scroll-reveal">
               <span class="benefit-num">10</span>
               <h3>一緒に仕事ができるようになる</h3>
             </div>
@@ -298,40 +313,16 @@
         </div>
       </section>
 
-      <!-- 6. 信頼：Asahiって何者？・実績・お客様の声 -->
+      <!-- 7. 信頼：実績・お客様の声 -->
       <section id="trust" class="section section-soft">
         <div class="container section-inner">
           <div class="section-heading center scroll-reveal">
-            <p class="eyebrow">サロンについて</p>
-            <h2>Asahiって何者？</h2>
+            <p class="eyebrow">Asahiの信頼</p>
+            <h2>実績と、お客様の声</h2>
           </div>
 
-          <!-- 上段：運営者プロフィール + 実績（横並び） -->
-          <div class="trust-top-row scroll-reveal">
-            <div class="card trust-card trust-card-profile">
-              <h3>運営者 Asahi</h3>
-              <p class="trust-catch">総フォロワー数26万人の心理学インフルエンサー</p>
-              <div class="profile-visual">
-                <!-- 【差し替え可】Asahiの顔写真。差し替え時は src を変更 -->
-                <img
-                  src="Adobe Express - file (1).png"
-                  alt="Asahi"
-                  class="profile-image"
-                />
-              </div>
-              <div class="profile-text">
-                <p>兄への右肺提供の移植を経験、妹の不登校を目の当たりにし、自身も学生時代の8割は常にいじめに苦しむ。そんな人の心の傷に人一倍敏感で、そんな苦労の連続から資格に縛られない、人間の幸せを最大に表出できる心理学を追求している。</p>
-                <p>若さと爽やかな笑顔が特徴で、心理学業界ではTOPの影響力を誇る。幸せのサロン以外にも、一人ひとりを丁寧に変容させるコーチング、たった1泊2日で人生観を変えさせるリトリート（癒しの旅）、ラジオ番組出演など、心理学を主軸に多方面で活躍している。</p>
-              </div>
-              <div class="media-links">
-                <p class="media-links-label">メディア掲載</p>
-                <ul class="media-links-list">
-                  <li><a href="https://news.infoseek.co.jp/article/globalnewsasia_10482/" target="_blank" rel="noopener noreferrer">infoseekニュース</a></li>
-                  <li><a href="https://www.excite.co.jp/news/article/Global_news_asia_10482/" target="_blank" rel="noopener noreferrer">exciteニュース</a></li>
-                  <li><a href="https://news.nicovideo.jp/watch/nw18491275?news_ref=media367_media367" target="_blank" rel="noopener noreferrer">ニコニコニュース</a></li>
-                </ul>
-              </div>
-            </div>
+          <!-- 上段：実績 -->
+          <div class="trust-top-row trust-top-row-stats-only scroll-reveal">
             <div class="card trust-card trust-card-stats">
               <h3>実績</h3>
               <div class="stats-list">
@@ -532,6 +523,10 @@
             <details class="faq-item scroll-reveal">
               <summary>Q. VIPプレミアムの審査とはどのようなものでしょうか？</summary>
               <p>A. こちらは公開できません。また、プレミアムは枠はすぐになくなってしまいます。</p>
+            </details>
+            <details class="faq-item scroll-reveal">
+              <summary>Q. 男性でも参加できますか？</summary>
+              <p>A. もちろん参加可能です。</p>
             </details>
           </div>
         </div>
