@@ -1367,9 +1367,11 @@ p:last-child { margin-bottom: 0; }
 
 /* === PLANS TABLE（縦軸=項目／横軸=プラン） === */
 .plans-table-wrapper {
+  width: 100%;                   /* 親コンテナに収める */
   max-width: 880px;
   margin: 0 auto;
-  overflow-x: auto;             /* SP横スクロール */
+  overflow-x: auto;              /* 内部でだけ横スクロール */
+  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   border-radius: var(--r-lg);
   box-shadow: 0 4px 16px rgba(10, 42, 117, 0.06),
@@ -2292,12 +2294,16 @@ p:last-child { margin-bottom: 0; }
   .plan-card { padding: 24px 20px; }
   .plan-price-main { font-size: 2rem; }
 
-  /* === PLANS TABLE SP: 全体縮小 === */
+  /* === PLANS TABLE SP: 全体縮小・コンテナ内に収める === */
   .plans-table-wrapper {
     border-radius: var(--r-md);
+    width: 100%;
+    max-width: 100%;
   }
   .plans-table {
-    min-width: 460px;
+    min-width: 0;                /* 親(=画面幅)に合わせる */
+    width: 100%;
+    table-layout: fixed;
   }
   .plans-table thead th {
     padding: 14px 8px 14px;
