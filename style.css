@@ -530,8 +530,8 @@ p:last-child { margin-bottom: 0; }
   object-fit: cover;
   object-position: 70% center; /* 顔が右寄りに来るように */
 }
-/* 写真の上に薄い白フェードを左→右に重ねる。
-   写真は全体に見えつつ、左側のテキスト周りだけ少し白くして可読性UP */
+/* 写真の上の白フェードは「左半分のテキスト保護のみ」に絞る。
+   右側（顔の領域）はクリアに表示 */
 .hero-image::after {
   content: '';
   position: absolute;
@@ -539,10 +539,10 @@ p:last-child { margin-bottom: 0; }
   z-index: 2;
   background: linear-gradient(
     90deg,
-    rgba(245, 249, 246, 0.72) 0%,
-    rgba(245, 249, 246, 0.48) 28%,
-    rgba(245, 249, 246, 0.18) 52%,
-    rgba(245, 249, 246, 0)    72%
+    rgba(245, 249, 246, 0.78) 0%,
+    rgba(245, 249, 246, 0.42) 22%,
+    rgba(245, 249, 246, 0.05) 42%,
+    rgba(245, 249, 246, 0)    52%
   );
   pointer-events: none;
 }
@@ -600,16 +600,53 @@ p:last-child { margin-bottom: 0; }
 }
 
 .hero-subcopy {
-  margin: 0 0 32px;
+  margin: 16px 0 28px;
   max-width: 520px;
   font-size: 1.05rem;
   color: var(--text-body);
-  line-height: 1.95;
+  line-height: 1.85;
   letter-spacing: 0.02em;
   text-shadow:
     0 0 4px rgba(255,255,255,1),
     0 0 14px rgba(255,255,255,0.9),
     0 0 28px rgba(255,255,255,0.6);
+}
+.hero-subcopy strong {
+  color: var(--primary);
+  font-weight: 700;
+  border-bottom: 2px solid var(--accent-gold);
+  padding: 0 2px;
+}
+
+/* Hero 悩み箇条書き */
+.hero-pains {
+  list-style: none;
+  padding: 0;
+  margin: 6px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 480px;
+}
+.hero-pains li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 1rem;
+  color: var(--text-body);
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  text-shadow:
+    0 0 4px rgba(255,255,255,1),
+    0 0 12px rgba(255,255,255,0.8);
+}
+.hero-pains li::before {
+  content: '';
+  position: absolute;
+  top: 0.7em;
+  left: 0;
+  width: 12px;
+  height: 1px;
+  background: var(--accent-gold);
 }
 
 /* gold thin divider above CTA (img07の細い水平罫線) */
@@ -658,10 +695,10 @@ p:last-child { margin-bottom: 0; }
 .problems-stage {
   position: relative;
   width: 100%;
-  max-width: 700px;
+  max-width: 1080px;            /* 大幅拡大 */
   margin: 32px auto 0;
-  aspect-ratio: 4 / 3;
-  min-height: 0;
+  aspect-ratio: 16 / 11;
+  min-height: 600px;
 }
 
 .problems-character {
@@ -669,8 +706,8 @@ p:last-child { margin-bottom: 0; }
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 360px;                 /* キャラ大きく */
-  height: 360px;
+  width: 400px;
+  height: 400px;
   z-index: 1;
 }
 .problems-character img {
@@ -684,16 +721,47 @@ p:last-child { margin-bottom: 0; }
   position: absolute;
   background: #fff;
   border: 1.5px solid rgba(217, 189, 124, 0.5);
-  border-radius: 22px;
+  border-radius: 24px;
   padding: 14px 18px;
-  box-shadow: 0 12px 28px rgba(60, 100, 80, 0.14),
+  box-shadow: 0 14px 32px rgba(60, 100, 80, 0.16),
               0 4px 10px rgba(60, 100, 80, 0.08);
   font-size: 0.9rem;
   line-height: 1.5;
   color: var(--text);
   max-width: 220px;
-  z-index: 3;                  /* キャラより前面 */
+  z-index: 3;
+  font-weight: 600;            /* 全体を太字寄りに */
 }
+
+/* 4バブル個別サイズ（強弱・リズム）— 訴求強化 */
+.bubble-tl {
+  max-width: 360px;
+  padding: 26px 32px;
+  font-size: 1.25rem;
+  line-height: 1.55;
+}
+.bubble-tr {
+  max-width: 420px;
+  padding: 30px 36px;
+  font-size: 1.35rem;
+  line-height: 1.55;
+}
+.bubble-bl {
+  max-width: 320px;
+  padding: 24px 30px;
+  font-size: 1.18rem;
+  line-height: 1.55;
+}
+.bubble-br {
+  max-width: 440px;
+  padding: 32px 38px;
+  font-size: 1.4rem;
+  line-height: 1.55;
+}
+.bubble strong {
+  font-size: 1.06em;           /* strong は更に大きく */
+}
+
 .bubble strong {
   color: var(--primary);
   font-weight: 700;
@@ -708,8 +776,8 @@ p:last-child { margin-bottom: 0; }
 
 /* キャラに食い込むほど密に取り囲む配置（PC） */
 .bubble-tl {
-  top: 8%;
-  left: 8%;
+  top: 4%;
+  left: 2%;
   transform: rotate(-2deg);
 }
 .bubble-tl::before {
@@ -726,8 +794,8 @@ p:last-child { margin-bottom: 0; }
 }
 
 .bubble-tr {
-  top: 8%;
-  right: 8%;
+  top: 4%;
+  right: 2%;
   transform: rotate(2.5deg);
 }
 .bubble-tr::before {
@@ -744,8 +812,8 @@ p:last-child { margin-bottom: 0; }
 }
 
 .bubble-bl {
-  bottom: 8%;
-  left: 8%;
+  bottom: 4%;
+  left: 2%;
   transform: rotate(2deg);
 }
 .bubble-bl::before {
@@ -762,8 +830,8 @@ p:last-child { margin-bottom: 0; }
 }
 
 .bubble-br {
-  bottom: 8%;
-  right: 8%;
+  bottom: 4%;
+  right: 2%;
   transform: rotate(-2.5deg);
 }
 .bubble-br::before {
@@ -792,7 +860,7 @@ p:last-child { margin-bottom: 0; }
 .qmark-2 { top: 42%;  right: 28%; font-size: 80px; transform: rotate(8deg); }
 .qmark-3 { bottom: 28%; left: 32%; font-size: 56px; transform: rotate(-8deg); }
 
-/* === ABOUT ASAHI（共感の上に置いたプロフィールセクション） === */
+/* === ABOUT ASAHI（共感の下に置いたプロフィールセクション） === */
 .about-asahi-row {
   display: flex;
   justify-content: center;
@@ -800,6 +868,118 @@ p:last-child { margin-bottom: 0; }
 .about-asahi-row .trust-card-profile {
   width: 100%;
   max-width: 920px;
+}
+.profile-section-label {
+  font-family: var(--f-script), var(--f-heading);
+  font-style: italic;
+  font-size: 0.9rem !important;
+  letter-spacing: 0.18em;
+  color: var(--accent-gold-d);
+  margin: 28px 0 8px !important;
+  text-align: center;
+}
+.profile-text > p:first-child.profile-section-label { margin-top: 0 !important; }
+
+/* === BRIDGE: 共感→自己紹介の橋渡し === */
+.bridge-section {
+  padding: 60px 0 !important;
+  background: linear-gradient(180deg, transparent 0%, var(--bg-alt) 50%, transparent 100%);
+}
+.bridge-card {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 36px;
+  background: #fff;
+  border-radius: var(--r-lg);
+  border: 1px solid rgba(197, 160, 90, 0.22);
+  box-shadow: 0 12px 36px rgba(10, 42, 117, 0.06);
+  position: relative;
+}
+.bridge-card::before {
+  content: '\201C';
+  position: absolute;
+  top: 8px;
+  left: 24px;
+  font-family: var(--f-heading);
+  font-size: 4rem;
+  line-height: 1;
+  color: rgba(197, 160, 90, 0.2);
+  pointer-events: none;
+}
+.bridge-lead {
+  margin: 0 0 18px;
+  font-family: var(--f-heading);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--accent-gold-d);
+  letter-spacing: 0.08em;
+}
+.bridge-body {
+  margin: 0 0 18px;
+  font-family: var(--f-heading);
+  font-size: 1.15rem;
+  font-weight: 500;
+  line-height: 2;
+  color: var(--text);
+  letter-spacing: 0.04em;
+}
+.bridge-body:last-child { margin-bottom: 0; }
+.bridge-body strong {
+  color: var(--primary);
+  font-weight: 700;
+  background: linear-gradient(transparent 60%, var(--gold-bg-strong) 60%);
+  padding: 0 4px;
+}
+
+/* === FUTURE: サロンでこうなれる === */
+.future-block {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+.future-list {
+  list-style: none;
+  padding: 0;
+  margin: 32px auto 28px;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+}
+.future-list li {
+  position: relative;
+  padding: 14px 16px 14px 50px;
+  font-family: var(--f-heading);
+  font-size: 1.1rem;
+  line-height: 1.55;
+  color: var(--text);
+  background: var(--bg-alt);
+  border-radius: var(--r-md);
+  border-left: 3px solid var(--accent-gold);
+}
+.future-list li::before {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 18px;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--accent-gold);
+  color: #fff;
+  font-size: 0.78rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+.future-note {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin: 0;
 }
 
 /* === FEATURES === */
@@ -864,18 +1044,33 @@ p:last-child { margin-bottom: 0; }
   gap: 16px;
 }
 
-/* 上位5: 大きく目立たせる */
+/* XL: 最重要2件 */
+.benefits-grid-xl {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-bottom: 24px;
+}
+
+/* L: 重要3件 */
 .benefits-grid-large {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
-  margin-bottom: 28px;
+  margin-bottom: 32px;
 }
 
-/* 下位5: 小さく控えめに */
-.benefits-grid-small {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-  opacity: 0.92;
+/* 下位5: 枠なしテキストのみ（"○○ / ○○ など"） */
+.benefits-other {
+  margin: 0 auto;
+  max-width: 720px;
+  text-align: center;
+  font-size: 0.92rem;
+  line-height: 1.95;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+.benefits-other strong {
+  font-weight: 600;
+  color: var(--text);
 }
 
 .benefit-card {
@@ -889,29 +1084,16 @@ p:last-child { margin-bottom: 0; }
   overflow: hidden;
 }
 
-/* 大カード：余白・アイコン・タイトル全部大きめ */
+/* XLカード：最重要・余白大 */
+.benefit-card-xl {
+  padding: 40px 28px 36px;
+  gap: 14px;
+}
+
+/* Lカード：重要・余白中 */
 .benefit-card-large {
   padding: 32px 20px 28px;
   gap: 10px;
-}
-
-/* 小カード：番号バッジ+テキストの横並び（card装飾なし） */
-.benefit-card-small {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 14px;
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(60, 100, 80, 0.12);
-  border-radius: var(--r-md);
-  text-align: left;
-  position: relative;
-  overflow: hidden;
-}
-.benefit-card-small h3 {
-  flex: 1;
-  margin: 0;
 }
 
 .benefit-icon {
@@ -925,14 +1107,16 @@ p:last-child { margin-bottom: 0; }
   object-fit: contain;
 }
 
-/* 大カードのアイコンは大きく */
+/* XLカードのアイコン：もっと大きく */
+.benefit-card-xl .benefit-icon {
+  width: 128px;
+  height: 128px;
+}
+/* 大カードのアイコンは中サイズ */
 .benefit-card-large .benefit-icon {
   width: 96px;
   height: 96px;
 }
-
-/* 小カードはアイコン非表示 */
-.benefit-card-small .benefit-icon { display: none; }
 
 .benefit-num {
   flex-shrink: 0;
@@ -950,16 +1134,15 @@ p:last-child { margin-bottom: 0; }
   letter-spacing: -0.02em;
 }
 
-/* 大カードの番号バッジは大きく */
+/* XLカードの番号バッジ：最大 */
+.benefit-card-xl .benefit-num {
+  width: 42px; height: 42px;
+  font-size: 0.88rem;
+}
+/* 大カードの番号バッジは中 */
 .benefit-card-large .benefit-num {
   width: 36px; height: 36px;
   font-size: 0.78rem;
-}
-
-/* 小カードの番号バッジは小さく */
-.benefit-card-small .benefit-num {
-  width: 24px; height: 24px;
-  font-size: 0.6rem;
 }
 
 .benefit-card h3 {
@@ -971,18 +1154,15 @@ p:last-child { margin-bottom: 0; }
   line-height: 1.4;
 }
 
-/* 大カードのタイトルは大きく */
+/* XLカードのタイトル：最大 */
+.benefit-card-xl h3 {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+/* 大カードのタイトルは中 */
 .benefit-card-large h3 {
   font-size: 1.05rem;
   line-height: 1.45;
-}
-
-/* 小カードのタイトルは控えめに */
-.benefit-card-small h3 {
-  font-size: 0.78rem;
-  line-height: 1.35;
-  font-weight: 600;
-  color: var(--text-body);
 }
 
 /* Stagger animation */
@@ -998,45 +1178,319 @@ p:last-child { margin-bottom: 0; }
 .benefits-grid .scroll-reveal:nth-child(10) { transition-delay: 0.36s; }
 
 /* === VALUE === */
-.value-card h3 {
-  margin: 0 0 8px;
-  font-family: var(--f-heading);
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--text);
-}
-
-.value-card-body {
-  display: flex;
-  align-items: center;
+/* === VALUE: アコーディオン×2+1グリッド === */
+.value-grid {
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 20px;
 }
 
-.value-icon { flex: 0 0 92px; }
-.value-icon img {
-  width: 92px; height: 92px;
+.value-card {
+  position: relative;
+  padding: 0;                /* summaryで内側余白をコントロール */
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  border: 1px solid rgba(197, 160, 90, 0.22);
+  background: var(--bg-alt);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* details summary はクリック可能・1行コンパクト */
+.value-card > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 16px 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+  z-index: 1;
+}
+.value-card > summary::-webkit-details-marker { display: none; }
+.value-card > summary > .quiet-num {
+  margin: 0;
+  font-size: 0.78rem;
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+.value-card > summary > h3 {
+  flex: 1;
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+.value-card > summary > .value-toggle {
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
-  object-fit: cover;
-  border: 1px solid var(--accent-gold);
+  background: rgba(197, 160, 90, 0.12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+  position: relative;
+  flex-shrink: 0;
+}
+.value-card > summary > .value-toggle::before,
+.value-card > summary > .value-toggle::after {
+  content: '';
+  position: absolute;
+  background: var(--accent-gold-d);
+  transition: transform 0.3s ease;
+}
+.value-card > summary > .value-toggle::before {
+  width: 10px; height: 2px;
+}
+.value-card > summary > .value-toggle::after {
+  width: 2px; height: 10px;
+}
+.value-card[open] > summary > .value-toggle {
+  background: var(--accent-gold);
+}
+.value-card[open] > summary > .value-toggle::before {
   background: #fff;
 }
-
-.value-card:nth-child(1) .value-icon img,
-.value-card:nth-child(2) .value-icon img,
-.value-card:nth-child(3) .value-icon img {
-  border: 1px solid var(--accent-gold);
-  box-shadow: 0 0 0 4px var(--gold-bg);
+.value-card[open] > summary > .value-toggle::after {
+  background: #fff;
+  transform: rotate(90deg); /* + → − */
 }
 
-.value-text { flex: 1; }
-.value-text p {
-  margin-bottom: 0;
+/* ボディ展開部分 */
+.value-card-body {
+  padding: 4px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  z-index: 1;
+}
+.value-card-image {
+  width: 100%;
+  height: auto;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: var(--r-md);
+  display: block;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* PC: 2列+1列（1列は2列の合計幅にスパン） */
+@media (min-width: 768px) {
+  .value-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+  }
+  .value-card-wide {
+    grid-column: 1 / -1;       /* 1列は全幅 */
+  }
+  /* 全幅カードは画像とテキストを横並びにすると間延び解消 */
+  .value-card-wide .value-card-body {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 28px;
+  }
+  .value-card-wide .value-card-image {
+    flex: 0 0 360px;
+    max-height: 240px;
+  }
+  .value-card-wide .value-card-body p {
+    flex: 1;
+    align-self: center;
+  }
+}
+
+/* 3カードに微妙に異なるグラデ（既存パレットのみで構成） */
+.value-card:nth-child(1) {
+  background:
+    linear-gradient(160deg, #FFFFFF 0%, var(--gold-bg) 100%);
+}
+.value-card:nth-child(2) {
+  background:
+    linear-gradient(160deg, var(--gold-bg) 0%, #FFFFFF 60%, var(--bg-alt) 100%);
+}
+.value-card:nth-child(3) {
+  background:
+    linear-gradient(160deg, var(--bg-alt) 0%, var(--primary-glow) 100%);
+}
+
+.value-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--sh-lg);
+}
+
+.value-card .quiet-num {
+  display: block;
+  margin: 0 0 8px;
+  font-family: var(--f-script);
+  font-style: italic;
   font-size: 0.95rem;
+  letter-spacing: 0.12em;
+  color: var(--accent-gold-d);
+}
+
+.value-card h3 {
+  margin: 0;
+  font-family: var(--f-heading);
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.value-card p {
+  margin: 0;
+  font-size: 0.96rem;
+  color: var(--text-muted);
+  line-height: 2;
+}
+
+/* 装飾円（右下からはみ出す半透明円） */
+.value-card .deco {
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* z-indexで装飾円を背面、テキストを前面に */
+.value-card .quiet-num,
+.value-card h3,
+.value-card p {
+  position: relative;
+  z-index: 1;
+}
+
+/* === PLANS TABLE（縦軸=項目／横軸=プラン） === */
+.plans-table-wrapper {
+  max-width: 880px;
+  margin: 0 auto;
+  overflow-x: auto;             /* SP横スクロール */
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--r-lg);
+  box-shadow: 0 4px 16px rgba(10, 42, 117, 0.06),
+              0 12px 36px rgba(10, 42, 117, 0.04);
+}
+
+.plans-table {
+  width: 100%;
+  min-width: 580px;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #fff;
+  font-family: var(--f-body);
+  color: var(--text);
+  table-layout: fixed;
+}
+
+/* ヘッダー（プラン名・価格） */
+.plans-table thead th {
+  padding: 28px 18px 24px;
+  text-align: center;
+  vertical-align: top;
+  border-bottom: 2px solid rgba(197, 160, 90, 0.3);
+  font-weight: 500;
+  font-size: 0.95rem;
+  background: var(--bg-alt);
+}
+.plans-table .plans-th-empty { background: transparent; border-bottom: none; }
+.plans-table .plans-th { width: 38%; }
+.plans-table .plans-th-empty { width: 24%; }
+
+.plans-table .plans-th-vip {
+  background: linear-gradient(180deg,
+    rgba(197, 160, 90, 0.18) 0%,
+    rgba(197, 160, 90, 0.10) 100%);
+  position: relative;
+}
+.plan-th-tag {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 3px 12px;
+  border-radius: var(--r-pill);
+  background: var(--accent-gold);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+.plan-th-name {
+  display: block;
+  margin-bottom: 8px;
+  font-family: var(--f-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--primary);
+}
+.plan-th-price {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+.plan-th-price strong {
+  font-family: var(--f-heading);
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+.plan-th-sub {
+  display: block;
+  font-size: 0.78rem;
   color: var(--text-muted);
 }
 
-/* === PLANS === */
-.plans-grid {
+/* ボディ（機能行） */
+.plans-table tbody th[scope="row"] {
+  padding: 16px 22px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 0.92rem;
+  color: var(--text);
+  background: rgba(251, 250, 247, 0.8);
+  border-bottom: 1px solid rgba(10, 42, 117, 0.06);
+  width: 24%;
+}
+.plans-table tbody td {
+  padding: 16px 18px;
+  text-align: center;
+  font-size: 1rem;
+  color: var(--text);
+  border-bottom: 1px solid rgba(10, 42, 117, 0.06);
+  width: 38%;
+}
+.plans-table tbody tr:last-child th,
+.plans-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.plans-table .plan-vip-cell {
+  background: rgba(197, 160, 90, 0.06);
+}
+
+.plan-yes {
+  color: var(--accent-gold-d);
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+.plan-no {
+  color: var(--text-faint);
+  font-size: 1.05rem;
+}
+.plans-row-annual td,
+.plans-row-annual th {
+  font-family: var(--f-heading);
+  color: var(--text-muted);
+}
+
+/* === Legacy plans-grid（テーブル化前のスタイル） — 残置 === */
+.plans-grid-legacy {
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -1293,19 +1747,33 @@ p:last-child { margin-bottom: 0; }
 
 /* Stats — big numbers */
 .stats-list {
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 24px;
 }
 .stat-item {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+  padding: 8px 4px;
+  position: relative;
+}
+/* 列間に縦の細いゴールド罫線（最後の列以外） */
+.stat-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 12%;
+  bottom: 12%;
+  right: -12px;
+  width: 1px;
+  background: rgba(197, 160, 90, 0.35);
 }
 .stat-number {
   font-family: var(--f-heading);
-  font-size: 2.5rem;
+  font-size: 2.6rem;
   font-weight: 700;
   color: var(--primary);
   line-height: 1;
@@ -1318,9 +1786,10 @@ p:last-child { margin-bottom: 0; }
   margin-left: 2px;
 }
 .stat-label {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
-  margin-top: 4px;
+  margin-top: 6px;
+  letter-spacing: 0.04em;
 }
 
 /* Testimonials */
@@ -1359,8 +1828,8 @@ p:last-child { margin-bottom: 0; }
 .voice-card {
   display: flex;
   flex-direction: column;
-  padding: clamp(24px, 3.5vw, 32px);
-  padding-top: clamp(32px, 4vw, 40px);
+  gap: 12px;
+  padding: 18px 18px 20px;
   border-radius: var(--r-lg);
   background: var(--bg-alt);
   border: none;
@@ -1372,15 +1841,14 @@ p:last-child { margin-bottom: 0; }
   overflow: hidden;
   transition: box-shadow var(--t-base), transform var(--t-base);
 }
-/* Decorative quote mark */
 .voice-card::before {
   content: '\201C';
   position: absolute;
-  top: 8px; left: 20px;
+  top: 4px; right: 12px;
   font-family: var(--f-heading);
-  font-size: 4rem;
+  font-size: 3rem;
   line-height: 1;
-  color: rgba(197, 160, 90, 0.1);
+  color: rgba(197, 160, 90, 0.12);
   pointer-events: none;
   user-select: none;
 }
@@ -1392,40 +1860,37 @@ p:last-child { margin-bottom: 0; }
   transform: translateY(-3px);
 }
 
-.voice-card-headline {
-  margin: 0 0 16px;
-  font-family: var(--f-heading);
-  font-size: clamp(1rem, 2vw, 1.1rem);
-  font-weight: 700;
-  line-height: 1.5;
-  color: var(--text);
-}
-
-.voice-card-body {
+/* 上段：顔イラスト+名前+見出し（横並び） */
+.voice-card-head {
   display: flex;
-  align-items: flex-start;
-  gap: clamp(14px, 2.5vw, 20px);
-  font-family: var(--f-body);
-  font-size: 0.92rem;
-  line-height: 1.8;
-  min-width: 0;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
 }
-
 .voice-card-aside {
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80px;
+  width: 56px;
 }
-
 .voice-avatar-img {
-  width: 72px; height: 72px;
+  width: 48px; height: 48px;
   border-radius: 50%;
   object-fit: cover;
   border: 1px solid var(--accent-gold);
   background: #fff;
   display: block;
+}
+.voice-card-headline {
+  flex: 1;
+  margin: 0;
+  font-family: var(--f-heading);
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--text);
+  min-width: 0;
 }
 .voice-avatar-placeholder {
   width: 72px; height: 72px;
@@ -1441,21 +1906,30 @@ p:last-child { margin-bottom: 0; }
   line-height: 1.3;
 }
 .voice-initials {
-  margin: 8px 0 0;
-  font-size: 0.72rem;
+  margin: 4px 0 0;
+  font-size: 0.62rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
   color: var(--text-muted);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.voice-meta {
+  font-size: 0.56rem;
+  font-weight: 500;
+  color: var(--text-faint);
+  letter-spacing: 0.04em;
 }
 
+/* 下段：本文（フル幅） */
 .voice-card-text {
-  flex: 1;
-  min-width: 0;
-  font: 400 0.92rem/1.8 var(--f-body);
+  margin: 0;
+  font: 400 0.82rem/1.7 var(--f-body);
   color: var(--text-muted);
 }
-.voice-card-text p { margin: 0 0 0.7em; font: inherit; }
+.voice-card-text p { margin: 0 0 0.6em; font: inherit; }
 .voice-card-text p:last-child { margin-bottom: 0; }
 
 /* === FAQ === */
@@ -1657,38 +2131,40 @@ p:last-child { margin-bottom: 0; }
 }
 
 @media (min-width: 768px) {
-  /* 大カードグループ: 5列・コンパクト（縦幅縮小：a+b） */
-  .benefits-grid-large {
-    gap: 16px;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-  }
-  .benefit-card-large { padding: 20px 14px 18px; gap: 6px; }
-  .benefit-card-large .benefit-icon { width: 80px; height: 80px; }
-  .benefit-card-large h3 { font-size: 0.95rem; }
-
-  /* 小カードグループ: 3列+2列 中央揃え */
-  .benefits-grid-small {
-    display: grid;
-    gap: 14px;
-    grid-template-columns: repeat(6, 1fr);
-    max-width: 720px;
+  /* XL: 2列で大きく */
+  .benefits-grid-xl {
+    gap: 24px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 880px;
     margin-left: auto;
     margin-right: auto;
   }
-  .benefits-grid-small > .benefit-card-small:nth-child(1) { grid-column: 1 / span 2; }
-  .benefits-grid-small > .benefit-card-small:nth-child(2) { grid-column: 3 / span 2; }
-  .benefits-grid-small > .benefit-card-small:nth-child(3) { grid-column: 5 / span 2; }
-  .benefits-grid-small > .benefit-card-small:nth-child(4) { grid-column: 2 / span 2; }
-  .benefits-grid-small > .benefit-card-small:nth-child(5) { grid-column: 4 / span 2; }
+  .benefit-card-xl { padding: 44px 32px 38px; gap: 14px; }
+  .benefit-card-xl .benefit-icon { width: 140px; height: 140px; }
+  .benefit-card-xl h3 { font-size: 1.25rem; }
+
+  /* L: 3列でコンパクト */
+  .benefits-grid-large {
+    gap: 16px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .benefit-card-large { padding: 22px 16px 20px; gap: 8px; }
+  .benefit-card-large .benefit-icon { width: 88px; height: 88px; }
+  .benefit-card-large h3 { font-size: 1rem; }
+
+  /* テキスト行：少し大きめ */
+  .benefits-other {
+    font-size: 0.95rem;
+    margin-top: 8px;
+  }
 }
 
 @media (min-width: 768px) {
   .grid-3,
   .features-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .value-icon { flex-basis: 100px; }
-  .value-icon img { width: 100px; height: 100px; }
+  /* value-icon は不要（カード再構築で削除済み） */
   .trust-top-row { grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.6fr); }
-  .voices-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .voices-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
   .section,
   .section-soft { padding: 108px 0; }
 }
@@ -1809,11 +2285,58 @@ p:last-child { margin-bottom: 0; }
   /* 旧 problem-card 系のSP指定は構造変更に伴い無効化 */
 
   .profile-image { width: 180px; height: 180px; }
-  .value-card-body { flex-direction: column; align-items: flex-start; }
-  .value-icon { flex: 0 0 auto; }
+  /* SPでvalue-cardの内部余白を少し控えめに */
+  .value-card { padding: 40px 24px 32px; }
+  .value-card h3 { font-size: 1.2rem; }
 
   .plan-card { padding: 24px 20px; }
   .plan-price-main { font-size: 2rem; }
+
+  /* === PLANS TABLE SP: 全体縮小 === */
+  .plans-table-wrapper {
+    border-radius: var(--r-md);
+  }
+  .plans-table {
+    min-width: 460px;
+  }
+  .plans-table thead th {
+    padding: 14px 8px 14px;
+    font-size: 0.82rem;
+  }
+  .plans-table .plans-th { width: 36%; }
+  .plans-table .plans-th-empty { width: 28%; }
+  .plan-th-tag {
+    margin-bottom: 6px;
+    padding: 2px 8px;
+    font-size: 0.58rem;
+    letter-spacing: 0.04em;
+  }
+  .plan-th-name {
+    margin-bottom: 4px;
+    font-size: 0.92rem;
+    letter-spacing: 0.02em;
+  }
+  .plan-th-price {
+    margin-bottom: 2px;
+    font-size: 0.74rem;
+  }
+  .plan-th-price strong {
+    font-size: 1.2rem;
+  }
+  .plan-th-sub {
+    font-size: 0.62rem;
+  }
+  .plans-table tbody th[scope="row"] {
+    padding: 10px 10px;
+    font-size: 0.74rem;
+    width: 28%;
+  }
+  .plans-table tbody td {
+    padding: 10px 8px;
+    font-size: 0.78rem;
+  }
+  .plan-yes { font-size: 0.95rem; }
+  .plan-no  { font-size: 0.85rem; }
 
   .voice-card-body { flex-direction: column; }
   .voice-card-aside { width: auto; flex-direction: row; gap: 10px; align-items: center; }
@@ -1823,7 +2346,13 @@ p:last-child { margin-bottom: 0; }
   .contact-ending { padding: 24px 20px; }
   .ending-lead { font-size: 1.1rem; }
 
-  .stat-number { font-size: 2rem; }
+  /* SPは3列キープ・各要素を圧縮 */
+  .stats-list { gap: 8px; margin-top: 16px; }
+  .stat-item { padding: 4px 2px; gap: 4px; }
+  .stat-item:not(:last-child)::after { right: -4px; }
+  .stat-number { font-size: 1.65rem; }
+  .stat-unit { font-size: 0.8rem; }
+  .stat-label { font-size: 0.7rem; line-height: 1.4; margin-top: 4px; }
 
   /* === PROBLEMS SP: キャラ中央 + 上下2個ずつ吹き出し（密集配置） === */
   .problems-stage {
@@ -1896,19 +2425,42 @@ p:last-child { margin-bottom: 0; }
   .qmark-2 { top: 48%;  left: 6%; }
   .qmark-3 { bottom: 8%; right: 42%; }
 
-  /* === BENEFITS SP: top5 縮小 / bottom5 端的レイアウト === */
-  .benefit-card-large { padding: 18px 12px 14px; gap: 6px; }
-  .benefit-card-large .benefit-icon { width: 64px; height: 64px; }
-  .benefit-card-large h3 { font-size: 0.84rem; }
-  .benefits-grid-large { gap: 12px; }
-
-  /* 小カードはSPでは1列フルワイド */
-  .benefits-grid-small {
-    grid-template-columns: 1fr;
-    gap: 8px;
+  /* === BENEFITS SP: 2行構成（XL=2列 + L=3列、同じ横幅・同じ縦幅） === */
+  .benefits-grid-xl {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 10px;
   }
-  .benefit-card-small { padding: 10px 12px; }
-  .benefit-card-small h3 { font-size: 0.85rem; }
+  .benefits-grid-large {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  /* XL/L両方を共通の縦幅にそろえる */
+  .benefit-card-xl,
+  .benefit-card-large {
+    min-height: 200px;
+    padding: 14px 10px 12px;
+    gap: 6px;
+  }
+
+  /* XL（2列）：少しゆとり */
+  .benefit-card-xl .benefit-icon { width: 84px; height: 84px; }
+  .benefit-card-xl .benefit-num { width: 26px; height: 26px; font-size: 0.62rem; }
+  .benefit-card-xl h3 { font-size: 0.82rem; line-height: 1.35; }
+
+  /* L（3列）：タイト */
+  .benefit-card-large .benefit-icon { width: 56px; height: 56px; }
+  .benefit-card-large .benefit-num { width: 22px; height: 22px; font-size: 0.56rem; }
+  .benefit-card-large h3 { font-size: 0.7rem; line-height: 1.3; }
+
+  .benefits-other {
+    font-size: 0.82rem;
+    line-height: 1.85;
+    text-align: left;
+    padding: 0 4px;
+  }
 }
 
 @media (min-width: 960px) {
