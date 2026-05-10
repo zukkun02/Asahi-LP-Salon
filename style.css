@@ -510,7 +510,7 @@ p:last-child { margin-bottom: 0; }
   align-items: flex-start;
   justify-content: center;
   text-align: left;
-  max-width: 52%;
+  max-width: 70%;                /* 顔に被ってもOK・タイトルを大きく */
   padding: clamp(40px, 6vh, 80px) 0 clamp(40px, 6vh, 80px) clamp(20px, 6vw, 90px);
 }
 
@@ -577,18 +577,18 @@ p:last-child { margin-bottom: 0; }
 .hero-title {
   margin: 0 0 22px;
   font-family: var(--f-heading);
-  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
-  font-weight: 900;            /* ExtraBold (img07#12) */
-  line-height: 1.4;
+  font-size: clamp(2.6rem, 5.2vw, 4.2rem);   /* 一段大きく */
+  font-weight: 900;
+  line-height: 1.35;
   letter-spacing: 0.06em;
   color: var(--text);
-  /* 強めの白い外側光彩: 写真の上でも読めるように二重に重ねる */
+  /* 顔の上に重なっても読めるよう光彩を更に強化 */
   text-shadow:
-    0 0 2px rgba(255,255,255,1),
-    0 0 8px rgba(255,255,255,0.95),
-    0 0 22px rgba(255,255,255,0.85),
-    0 0 44px rgba(255,255,255,0.6),
-    0 2px 0 rgba(255,255,255,0.8);
+    0 0 3px rgba(255,255,255,1),
+    0 0 12px rgba(255,255,255,1),
+    0 0 28px rgba(255,255,255,0.9),
+    0 0 56px rgba(255,255,255,0.7),
+    0 2px 0 rgba(255,255,255,0.9);
 }
 
 .hero-underline {
@@ -1713,19 +1713,29 @@ p:last-child { margin-bottom: 0; }
   color: var(--primary);
 }
 
+/* プロフィール写真：円形 + 背景画像で顔をズーム＆中央配置 */
 .profile-visual {
-  margin: 12px 0 10px;
-  display: flex;
-  justify-content: center;
-}
-
-.profile-image {
-  width: 220px; height: 220px;
+  width: 280px;
+  height: 280px;
+  margin: 12px auto 10px;
   border-radius: 50%;
-  object-fit: cover;
-  object-position: 40% 30%;
+  overflow: hidden;
   box-shadow: 0 0 0 6px var(--gold-bg), var(--sh-md);
   border: 1px solid var(--accent-gold);
+  flex-shrink: 0;
+  background-image: url('images/asahi-portrait.png');
+  background-repeat: no-repeat;
+  background-color: #fff;
+  /* 元画像 (4:3) を拡大表示、顔を円中央に */
+  background-size: 280% auto;
+  background-position: 50% 32%;
+}
+/* <img> タグはアクセシビリティ目的で残し、視覚的には透明 */
+.profile-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0;
 }
 
 .trust-card-profile .profile-text {
