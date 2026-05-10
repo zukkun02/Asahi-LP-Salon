@@ -869,16 +869,6 @@ p:last-child { margin-bottom: 0; }
   width: 100%;
   max-width: 920px;
 }
-.profile-section-label {
-  font-family: var(--f-script), var(--f-heading);
-  font-style: italic;
-  font-size: 0.9rem !important;
-  letter-spacing: 0.18em;
-  color: var(--accent-gold-d);
-  margin: 28px 0 8px !important;
-  text-align: center;
-}
-.profile-text > p:first-child.profile-section-label { margin-top: 0 !important; }
 
 /* === BRIDGE: 共感→自己紹介の橋渡し === */
 .bridge-section {
