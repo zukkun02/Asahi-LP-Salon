@@ -5,13 +5,13 @@
    Fonts: 明朝 (Noto Serif JP) + Sans (Noto Sans JP) + Cormorant Garamond
    ============================================= */
 
-/* === DESIGN TOKENS — Navy × Gold === */
+/* === DESIGN TOKENS — Navy × Sky-blue（青白統一） === */
 :root {
   /* Color — Base */
   --bg:          #FFFFFF;            /* ピュアホワイト */
-  --bg-alt:      #FBFAF7;            /* ペーパーホワイト */
+  --bg-alt:      #F6FAFD;            /* ペーパーホワイト寄りライトブルー */
   --surface:     #F1F5FA;            /* ライトブルーサーフェス */
-  --surface-2:   #F7F4EC;            /* シャンパンサーフェス */
+  --surface-2:   #EAF2FA;            /* スカイブルーサーフェス */
   /* Color — Text */
   --text:        #0A2A75;            /* ディープロイヤルブルー (見出し) */
   --text-body:   #2E3A4F;            /* 本文 */
@@ -22,23 +22,23 @@
   --primary-h:   #061E5A;
   --primary-l:   #2A4A9D;
   --primary-glow: rgba(10, 42, 117, 0.22);
-  /* Color — Accent (Gold) */
-  --accent-gold:    #C5A05A;
-  --accent-gold-l:  #D9BD7C;
-  --accent-gold-d:  #9F7E3F;
-  --gold-bg:        rgba(197, 160, 90, 0.10);
-  --gold-bg-strong: rgba(197, 160, 90, 0.22);
+  /* Color — Accent (Sky Blue, gold variable名は維持して値だけ青に) */
+  --accent-gold:    #6B8FC0;         /* 青アクセント（旧ゴールド変数） */
+  --accent-gold-l:  #94AED4;
+  --accent-gold-d:  #4D6FA0;
+  --gold-bg:        rgba(107, 143, 192, 0.12);
+  --gold-bg-strong: rgba(107, 143, 192, 0.28);
   /* Color — Borders */
-  --border:      #E5E1D6;
-  --border-gold: #C5A05A;
-  --border-soft: #EFEDE5;
-  /* Legacy accent aliases (used across older CSS sections) */
-  --pink:        #C5A05A;
-  --pink-bg:     rgba(197, 160, 90, 0.10);
+  --border:      #DCE3EE;
+  --border-gold: #6B8FC0;
+  --border-soft: #EAEEF5;
+  /* Legacy accent aliases */
+  --pink:        #6B8FC0;
+  --pink-bg:     rgba(107, 143, 192, 0.12);
   --green:       #0A2A75;
   --green-bg:    rgba(10, 42, 117, 0.08);
-  --amber:       #C5A05A;
-  --amber-bg:    rgba(197, 160, 90, 0.10);
+  --amber:       #6B8FC0;
+  --amber-bg:    rgba(107, 143, 192, 0.12);
   --violet:      #2A4A9D;
   --violet-bg:   rgba(42, 74, 157, 0.08);
   /* Shape */
@@ -296,7 +296,7 @@ p:last-child { margin-bottom: 0; }
   backdrop-filter: blur(24px) saturate(1.4);
   -webkit-backdrop-filter: blur(24px) saturate(1.4);
   background: rgba(255, 255, 255, 0.85);
-  border-bottom: 1px solid rgba(197, 160, 90, 0.30);
+  border-bottom: 1px solid rgba(107, 143, 192, 0.30);
 }
 
 .header-inner {
@@ -442,11 +442,11 @@ p:last-child { margin-bottom: 0; }
     radial-gradient(circle at 38% 72%, rgba(255,255,255,0.6)  0%, transparent 0.14%),
     radial-gradient(circle at 88% 64%, rgba(168,216,240,0.65) 0%, transparent 0.20%),
     /* gold sparkle particles */
-    radial-gradient(circle at 12% 84%, rgba(217,189,124,0.55) 0%, transparent 0.18%),
-    radial-gradient(circle at 64% 40%, rgba(217,189,124,0.45) 0%, transparent 0.14%),
+    radial-gradient(circle at 12% 84%, rgba(148,174,212,0.55) 0%, transparent 0.18%),
+    radial-gradient(circle at 64% 40%, rgba(148,174,212,0.45) 0%, transparent 0.14%),
     /* large soft halos */
     radial-gradient(ellipse at 80% 0%,  rgba(160, 210, 240, 0.42) 0%, transparent 55%),
-    radial-gradient(ellipse at 0% 95%,  rgba(197, 160, 90,  0.14) 0%, transparent 55%),
+    radial-gradient(ellipse at 0% 95%,  rgba(107, 143, 192,  0.14) 0%, transparent 55%),
     /* base sky → white gradient */
     linear-gradient(180deg, #DCEEFB 0%, #F1F8FE 45%, #FFFFFF 75%, #FBFAF7 100%);
 }
@@ -477,7 +477,7 @@ p:last-child { margin-bottom: 0; }
   width: 580px; height: 580px;
   border-radius: 50%;
   filter: blur(40px);
-  background: radial-gradient(circle, rgba(217, 189, 124, 0.35) 0%, transparent 60%);
+  background: radial-gradient(circle, rgba(148, 174, 212, 0.35) 0%, transparent 60%);
   bottom: -180px; left: -140px;
   animation: hero-glow-pulse 11s ease-in-out 1.5s infinite alternate;
 }
@@ -667,7 +667,7 @@ p:last-child { margin-bottom: 0; }
   background:
     linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-l) 100%);
   clip-path: polygon(50% 100%, 0 30%, 35% 30%, 35% 0, 65% 0, 65% 30%, 100% 30%);
-  filter: drop-shadow(0 2px 4px rgba(197,160,90,0.4));
+  filter: drop-shadow(0 2px 4px rgba(107,143,192,0.4));
   animation: hero-arrow-bounce 2.4s ease-in-out infinite;
 }
 @keyframes hero-arrow-bounce {
@@ -720,7 +720,7 @@ p:last-child { margin-bottom: 0; }
 .bubble {
   position: absolute;
   background: #fff;
-  border: 1.5px solid rgba(217, 189, 124, 0.5);
+  border: 1.5px solid rgba(148, 174, 212, 0.5);
   border-radius: 24px;
   padding: 14px 18px;
   box-shadow: 0 14px 32px rgba(60, 100, 80, 0.16),
@@ -784,7 +784,7 @@ p:last-child { margin-bottom: 0; }
   bottom: -16px; right: 30px;
   border-left: 14px solid transparent;
   border-right: 14px solid transparent;
-  border-top: 16px solid rgba(217, 189, 124, 0.5);
+  border-top: 16px solid rgba(148, 174, 212, 0.5);
 }
 .bubble-tl::after {
   bottom: -13px; right: 32px;
@@ -802,7 +802,7 @@ p:last-child { margin-bottom: 0; }
   bottom: -16px; left: 30px;
   border-left: 14px solid transparent;
   border-right: 14px solid transparent;
-  border-top: 16px solid rgba(217, 189, 124, 0.5);
+  border-top: 16px solid rgba(148, 174, 212, 0.5);
 }
 .bubble-tr::after {
   bottom: -13px; left: 32px;
@@ -820,7 +820,7 @@ p:last-child { margin-bottom: 0; }
   top: -16px; right: 30px;
   border-left: 14px solid transparent;
   border-right: 14px solid transparent;
-  border-bottom: 16px solid rgba(217, 189, 124, 0.5);
+  border-bottom: 16px solid rgba(148, 174, 212, 0.5);
 }
 .bubble-bl::after {
   top: -13px; right: 32px;
@@ -838,7 +838,7 @@ p:last-child { margin-bottom: 0; }
   top: -16px; left: 30px;
   border-left: 14px solid transparent;
   border-right: 14px solid transparent;
-  border-bottom: 16px solid rgba(217, 189, 124, 0.5);
+  border-bottom: 16px solid rgba(148, 174, 212, 0.5);
 }
 .bubble-br::after {
   top: -13px; left: 32px;
@@ -881,7 +881,7 @@ p:last-child { margin-bottom: 0; }
   padding: 48px 36px;
   background: #fff;
   border-radius: var(--r-lg);
-  border: 1px solid rgba(197, 160, 90, 0.22);
+  border: 1px solid rgba(107, 143, 192, 0.22);
   box-shadow: 0 12px 36px rgba(10, 42, 117, 0.06);
   position: relative;
 }
@@ -893,7 +893,7 @@ p:last-child { margin-bottom: 0; }
   font-family: var(--f-heading);
   font-size: 4rem;
   line-height: 1;
-  color: rgba(197, 160, 90, 0.2);
+  color: rgba(107, 143, 192, 0.2);
   pointer-events: none;
 }
 .bridge-lead {
@@ -1180,7 +1180,7 @@ p:last-child { margin-bottom: 0; }
   padding: 0;                /* summaryで内側余白をコントロール */
   border-radius: var(--r-lg);
   overflow: hidden;
-  border: 1px solid rgba(197, 160, 90, 0.22);
+  border: 1px solid rgba(107, 143, 192, 0.22);
   background: var(--bg-alt);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
@@ -1212,7 +1212,7 @@ p:last-child { margin-bottom: 0; }
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  background: rgba(197, 160, 90, 0.12);
+  background: rgba(107, 143, 192, 0.12);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1384,7 +1384,7 @@ p:last-child { margin-bottom: 0; }
   padding: 28px 18px 24px;
   text-align: center;
   vertical-align: top;
-  border-bottom: 2px solid rgba(197, 160, 90, 0.3);
+  border-bottom: 2px solid rgba(107, 143, 192, 0.3);
   font-weight: 500;
   font-size: 0.95rem;
   background: var(--bg-alt);
@@ -1395,8 +1395,8 @@ p:last-child { margin-bottom: 0; }
 
 .plans-table .plans-th-vip {
   background: linear-gradient(180deg,
-    rgba(197, 160, 90, 0.18) 0%,
-    rgba(197, 160, 90, 0.10) 100%);
+    rgba(107, 143, 192, 0.18) 0%,
+    rgba(107, 143, 192, 0.10) 100%);
   position: relative;
 }
 .plan-th-tag {
@@ -1463,7 +1463,7 @@ p:last-child { margin-bottom: 0; }
 }
 
 .plans-table .plan-vip-cell {
-  background: rgba(197, 160, 90, 0.06);
+  background: rgba(107, 143, 192, 0.06);
 }
 
 .plan-yes {
@@ -1523,7 +1523,7 @@ p:last-child { margin-bottom: 0; }
 }
 
 .plan-premium {
-  background: linear-gradient(165deg, rgba(197, 160, 90, 0.08) 0%, var(--bg-alt) 60%);
+  background: linear-gradient(165deg, rgba(107, 143, 192, 0.08) 0%, var(--bg-alt) 60%);
   border: 1px solid var(--accent-gold);
 }
 .plan-premium::before {
@@ -1771,7 +1771,7 @@ p:last-child { margin-bottom: 0; }
   bottom: 12%;
   right: -12px;
   width: 1px;
-  background: rgba(197, 160, 90, 0.35);
+  background: rgba(107, 143, 192, 0.35);
 }
 .stat-number {
   font-family: var(--f-heading);
@@ -1804,7 +1804,7 @@ p:last-child { margin-bottom: 0; }
   font-weight: 500;
   line-height: 1.95;
   color: var(--text);
-  border-top: 1px solid rgba(197, 160, 90, 0.3);
+  border-top: 1px solid rgba(107, 143, 192, 0.3);
   letter-spacing: 0.04em;
 }
 .stats-claim strong {
@@ -1875,7 +1875,7 @@ p:last-child { margin-bottom: 0; }
   font-family: var(--f-heading);
   font-size: 3rem;
   line-height: 1;
-  color: rgba(197, 160, 90, 0.12);
+  color: rgba(107, 143, 192, 0.12);
   pointer-events: none;
   user-select: none;
 }
@@ -2037,7 +2037,7 @@ p:last-child { margin-bottom: 0; }
   overflow: hidden;
   background:
     radial-gradient(ellipse at 80% 0%, rgba(168, 216, 240, 0.20) 0%, transparent 60%),
-    radial-gradient(ellipse at 0% 100%, rgba(197, 160, 90, 0.15) 0%, transparent 55%),
+    radial-gradient(ellipse at 0% 100%, rgba(107, 143, 192, 0.15) 0%, transparent 55%),
     linear-gradient(160deg, #061E5A 0%, #0A2A75 50%, #1A3A8E 100%);
 }
 .section-contact::before {
@@ -2124,7 +2124,7 @@ p:last-child { margin-bottom: 0; }
 .site-footer {
   padding: 28px 0 32px;
   background: #050F2C;
-  border-top: 1px solid rgba(197, 160, 90, 0.22);
+  border-top: 1px solid rgba(107, 143, 192, 0.22);
 }
 
 .footer-inner {
@@ -2425,7 +2425,7 @@ p:last-child { margin-bottom: 0; }
   .bubble-tl::before { bottom: -12px; right: 22px;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-top: 12px solid rgba(217, 189, 124, 0.5); }
+    border-top: 12px solid rgba(148, 174, 212, 0.5); }
   .bubble-tl::after { bottom: -10px; right: 24px;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
@@ -2433,7 +2433,7 @@ p:last-child { margin-bottom: 0; }
   .bubble-tr::before { bottom: -12px; left: 22px;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-top: 12px solid rgba(217, 189, 124, 0.5); }
+    border-top: 12px solid rgba(148, 174, 212, 0.5); }
   .bubble-tr::after { bottom: -10px; left: 24px;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
@@ -2441,7 +2441,7 @@ p:last-child { margin-bottom: 0; }
   .bubble-bl::before { top: -12px; right: 22px;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-bottom: 12px solid rgba(217, 189, 124, 0.5); }
+    border-bottom: 12px solid rgba(148, 174, 212, 0.5); }
   .bubble-bl::after { top: -10px; right: 24px;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
@@ -2449,7 +2449,7 @@ p:last-child { margin-bottom: 0; }
   .bubble-br::before { top: -12px; left: 22px;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-bottom: 12px solid rgba(217, 189, 124, 0.5); }
+    border-bottom: 12px solid rgba(148, 174, 212, 0.5); }
   .bubble-br::after { top: -10px; left: 24px;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
