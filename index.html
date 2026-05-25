@@ -166,14 +166,20 @@
           </div>
           <!-- XL: メインの中のメイン2件 -->
           <div class="benefits-grid benefits-grid-xl">
-            <div class="card benefit-card benefit-card-xl scroll-reveal">
+            <div class="card benefit-card benefit-card-xl scroll-reveal" role="button" tabindex="0" aria-haspopup="dialog"
+                 data-benefit data-modal-title="毎日サロン限定動画が見れる"
+                 data-modal-desc="SNSには一切非公開の幸せの秘訣を、包み隠さず大公開します。">
+              <span class="benefit-plus" aria-hidden="true">＋</span>
               <div class="benefit-icon">
                 <img src="images/benefits/benefit-01-v2.png" alt="サロン限定動画" width="1024" height="1024" loading="lazy" />
               </div>
               <span class="benefit-num">01</span>
               <h3>毎日サロン限定動画が見れる</h3>
             </div>
-            <div class="card benefit-card benefit-card-xl scroll-reveal">
+            <div class="card benefit-card benefit-card-xl scroll-reveal" role="button" tabindex="0" aria-haspopup="dialog"
+                 data-benefit data-modal-title="特許取得レベルのAsahi日記を毎日書く"
+                 data-modal-desc="毎日寝る前に「書くだけでポジティブになる」伝説のシートを公開します。">
+              <span class="benefit-plus" aria-hidden="true">＋</span>
               <div class="benefit-icon">
                 <img src="images/benefits/benefit-02-v2.png" alt="Asahi日記" width="1024" height="1024" loading="lazy" />
               </div>
@@ -184,21 +190,30 @@
 
           <!-- L: 重要3件 -->
           <div class="benefits-grid benefits-grid-large">
-            <div class="card benefit-card benefit-card-large scroll-reveal">
+            <div class="card benefit-card benefit-card-large scroll-reveal" role="button" tabindex="0" aria-haspopup="dialog"
+                 data-benefit data-modal-title="Asahi AIで24時間 質問・相談可能"
+                 data-modal-desc="Asahiの脳みそが入り込んだAI型Asahiが使い放題。いつでも質問・相談ができます。">
+              <span class="benefit-plus" aria-hidden="true">＋</span>
               <div class="benefit-icon">
                 <img src="images/benefits/benefit-03-v2.png" alt="Asahi AI" width="1024" height="1024" loading="lazy" />
               </div>
               <span class="benefit-num">03</span>
               <h3>Asahi AIで24時間<br />質問・相談可能</h3>
             </div>
-            <div class="card benefit-card benefit-card-large scroll-reveal">
+            <div class="card benefit-card benefit-card-large scroll-reveal" role="button" tabindex="0" aria-haspopup="dialog"
+                 data-benefit data-modal-title="月1壁打ちZoom会に参加できる"
+                 data-modal-desc="毎月サロンメンバー限定で開催。Asahiに直接、質問もし放題です。">
+              <span class="benefit-plus" aria-hidden="true">＋</span>
               <div class="benefit-icon">
                 <img src="images/benefits/benefit-04-v2.png" alt="壁打ちZoom会" width="1024" height="1024" loading="lazy" />
               </div>
               <span class="benefit-num">04</span>
               <h3>月1壁打ちZoom会に<br />参加できる</h3>
             </div>
-            <div class="card benefit-card benefit-card-large scroll-reveal">
+            <div class="card benefit-card benefit-card-large scroll-reveal" role="button" tabindex="0" aria-haspopup="dialog"
+                 data-benefit data-modal-title="リトリート（癒しの旅行）参加券"
+                 data-modal-desc="海、森、夜景、温泉。Asahi主催の癒しの連泊旅行に参加できます。">
+              <span class="benefit-plus" aria-hidden="true">＋</span>
               <div class="benefit-icon">
                 <img src="images/benefits/benefit-05-v2.png" alt="リトリート旅行" width="1024" height="1024" loading="lazy" />
               </div>
@@ -542,7 +557,66 @@
         <p class="footer-copy">&copy; Asahi Salon. All rights reserved.</p>
       </div>
     </footer>
+    <!-- 特徴ポップアップ -->
+    <div class="benefit-modal" id="benefitModal" role="dialog" aria-modal="true" aria-labelledby="benefitModalTitle" hidden>
+      <div class="benefit-modal-backdrop" data-modal-close></div>
+      <div class="benefit-modal-panel" role="document">
+        <button type="button" class="benefit-modal-close" data-modal-close aria-label="閉じる">×</button>
+        <div class="benefit-modal-icon">
+          <img id="benefitModalImg" src="" alt="" width="1024" height="1024" />
+        </div>
+        <h3 id="benefitModalTitle" class="benefit-modal-title"></h3>
+        <p id="benefitModalDesc" class="benefit-modal-desc"></p>
+      </div>
+    </div>
+
     <script>
+      (function () {
+        var modal = document.getElementById('benefitModal');
+        var modalImg = document.getElementById('benefitModalImg');
+        var modalTitle = document.getElementById('benefitModalTitle');
+        var modalDesc = document.getElementById('benefitModalDesc');
+        var lastFocused = null;
+
+        function openModal(card) {
+          var img = card.querySelector('.benefit-icon img');
+          modalImg.src = img ? img.getAttribute('src') : '';
+          modalImg.alt = img ? img.getAttribute('alt') : '';
+          modalTitle.textContent = card.getAttribute('data-modal-title') || '';
+          modalDesc.textContent = card.getAttribute('data-modal-desc') || '';
+          lastFocused = card;
+          modal.hidden = false;
+          document.body.style.overflow = 'hidden';
+          requestAnimationFrame(function () { modal.classList.add('is-open'); });
+          var closeBtn = modal.querySelector('.benefit-modal-close');
+          if (closeBtn) closeBtn.focus();
+        }
+
+        function closeModal() {
+          modal.classList.remove('is-open');
+          document.body.style.overflow = '';
+          window.setTimeout(function () { modal.hidden = true; }, 220);
+          if (lastFocused) lastFocused.focus();
+        }
+
+        document.querySelectorAll('[data-benefit]').forEach(function (card) {
+          card.addEventListener('click', function () { openModal(card); });
+          card.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              openModal(card);
+            }
+          });
+        });
+
+        modal.querySelectorAll('[data-modal-close]').forEach(function (el) {
+          el.addEventListener('click', closeModal);
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && !modal.hidden) closeModal();
+        });
+      })();
+
       (function () {
         var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         if (reduced) return;
